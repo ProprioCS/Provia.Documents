@@ -2,7 +2,7 @@
 
 **Claude link**: [![](https://claude.ai/favicon.ico)Claude](https://claude.ai/project/7d7c3ae3-fb5e-41d5-8fd5-dc999c5cc93a)
 
-The Orion SmartLock is a crucial component designed to prevent data conflicts and ensure data integrity within NetSuite for contract furniture dealers. This system implements a lightweight, yet robust mechanism to manage concurrent access to records, particularly those utilizing SmartTables with attached JSON files.
+The Provia Intellilock is a crucial component designed to prevent data conflicts and ensure data integrity within NetSuite for contract furniture dealers. This system implements a lightweight, yet robust mechanism to manage concurrent access to records, particularly those utilizing SmartTables with attached JSON files.
 
 The solution prevents multiple users from simultaneously editing the same record, mitigating the risk of data loss or inconsistencies. It includes features such as user notifications, timed lock expiration, and an override capability for authorized users, striking a balance between data protection and workflow flexibility.
 
