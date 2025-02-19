@@ -49,9 +49,9 @@ The Orion SmartLock system integrates seamlessly with the existing NetSuite inte
 
 ## Roles and Permissions
 
-The system uses NetSuite's native permission system, checking user permissions on the Orion Lock custom record to determine access levels for various operations. This replaces the originally defined role-based permissions with a more flexible, permission-based approach.
+The system uses NetSuite's native permission system, checking user permissions on the Provia IntelliLock custom record to determine access levels for various operations. This replaces the originally defined role-based permissions with a more flexible, permission-based approach.
 
-Permissions are now determined by the user's access level to the Orion Lock custom record:
+Permissions are now determined by the user's access level to the Provia IntelliLock custom record:
 
 - View: Ability to see lock information
     
@@ -87,7 +87,7 @@ Permissions are now determined by the user's access level to the Orion Lock cust
 
 ### Custom Objects and Scripts
 
-1. Custom Record: Orion Lock (customrecord_orion_lock)
+1. Custom Record: Provia IntelliLock (customrecord_provia_intellilock)
     
     - Fields:
         
