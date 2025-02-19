@@ -34,7 +34,7 @@ Utilities
 
 ## Design
 
-The Orion SmartLock system integrates seamlessly with the existing NetSuite interface, utilizing native NetSuite components for a consistent user experience. Key design elements include:
+The Provia SmartLock system integrates seamlessly with the existing NetSuite interface, utilizing native NetSuite components for a consistent user experience. Key design elements include:
 
 1. Lock Notification: Utilize NetSuite's messaging/alert module to display a prominent warning when a user views a record that is currently being edited.
     
@@ -49,9 +49,9 @@ The Orion SmartLock system integrates seamlessly with the existing NetSuite inte
 
 ## Roles and Permissions
 
-The system uses NetSuite's native permission system, checking user permissions on the Provia IntelliLock custom record to determine access levels for various operations. This replaces the originally defined role-based permissions with a more flexible, permission-based approach.
+The system uses NetSuite's native permission system, checking user permissions on the Provia Lock custom record to determine access levels for various operations. This replaces the originally defined role-based permissions with a more flexible, permission-based approach.
 
-Permissions are now determined by the user's access level to the Provia IntelliLock custom record:
+Permissions are now determined by the user's access level to the Provia Lock custom record:
 
 - View: Ability to see lock information
     
@@ -87,7 +87,7 @@ Permissions are now determined by the user's access level to the Provia IntelliL
 
 ### Custom Objects and Scripts
 
-1. Custom Record: Provia IntelliLock (customrecord_provia_intellilock)
+1. Custom Record: Provia Lock (customrecord_provia_lock)
     
     - Fields:
         
@@ -105,19 +105,19 @@ Permissions are now determined by the user's access level to the Provia IntelliL
             
 2. Scripts:
     
-    - OrionSmartLockUtils Module: Centralized utility functions for permission checking, lock operations, and RESTlet calls
+    - ProviaSmartLockUtils Module: Centralized utility functions for permission checking, lock operations, and RESTlet calls
         
-    - Orion SmartLock RESTlet: Handles API requests for lock management operations
+    - Provia SmartLock RESTlet: Handles API requests for lock management operations
         
-    - Orion SmartLock User Event Script: Manages lock warnings and actions on record load
+    - Provia SmartLock User Event Script: Manages lock warnings and actions on record load
         
-    - Orion SmartLock Dashboard Portlet: Provides an admin interface for viewing and managing locks
+    - Provia SmartLock Dashboard Portlet: Provides an admin interface for viewing and managing locks
         
-    - Orion SmartLock Dashboard Client Script: Handles user interactions on the admin dashboard
+    - Provia SmartLock Dashboard Client Script: Handles user interactions on the admin dashboard
         
-    - Orion SmartLock Record Client Script: Manages unlock functionality from individual record pages
+    - Provia SmartLock Record Client Script: Manages unlock functionality from individual record pages
         
-    - Orion SmartLock Scheduled Script: Performs regular maintenance tasks like expiring old locks
+    - Provia SmartLock Scheduled Script: Performs regular maintenance tasks like expiring old locks
         
 
 ### Key Technical Functions
@@ -191,6 +191,6 @@ A comprehensive testing strategy should be implemented, including:
 7. Configurable lock durations based on record types
     
 
-This comprehensive design document provides a detailed overview of the Orion SmartLock system, incorporating both the original design elements and the implemented solutions.
+This comprehensive design document provides a detailed overview of the Provia SmartLock system, incorporating both the original design elements and the implemented solutions.
 
 Be the first to add a reaction

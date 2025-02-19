@@ -24,7 +24,7 @@
 
 ## Overview
 
-The Quick Add Lead form is a streamlined and customized version of NetSuite's standard Quick Add Lead form, designed specifically for contract furniture dealers using the Orion suite. The main purpose of this solution is to simplify and accelerate the process of creating new leads by providing users with a concise form that includes only the essential fields relevant to the contract furniture industry.
+The Quick Add Lead form is a streamlined and customized version of NetSuite's standard Quick Add Lead form, designed specifically for contract furniture dealers using the Provia suite. The main purpose of this solution is to simplify and accelerate the process of creating new leads by providing users with a concise form that includes only the essential fields relevant to the contract furniture industry.
 
 Key benefits of the Quick Add Lead form for contract furniture dealers include:
 
@@ -35,7 +35,7 @@ Key benefits of the Quick Add Lead form for contract furniture dealers include:
 3. Enhanced user experience: The simplified form layout and intuitive field arrangement make it easy for users to input data accurately and quickly, improving overall user satisfaction and adoption.
     
 
-By leveraging NetSuite's customization capabilities and tailoring the Quick Add Lead form to the unique needs of contract furniture dealers, this solution will help streamline the lead generation process, improve data quality, and ultimately contribute to increased sales productivity within the Orion suite.Solution
+By leveraging NetSuite's customization capabilities and tailoring the Quick Add Lead form to the unique needs of contract furniture dealers, this solution will help streamline the lead generation process, improve data quality, and ultimately contribute to increased sales productivity within the Provia suite.Solution
 
 ## Solution Type
 
@@ -74,13 +74,13 @@ A detailed UI/UX design is not required for the Quick Add Lead form solution.
 
 ## Technical Specifications
 
-1. NetSuite version compatibility: Ensuring that the customizations and scripts used in the solution are compatible with the current NetSuite version used by the Orion suite.
+1. NetSuite version compatibility: Ensuring that the customizations and scripts used in the solution are compatible with the current NetSuite version used by the Provia suite.
     
 2. Performance impact: Assessing the potential performance impact of the customizations and automations on the overall system and ensuring optimal performance.
     
 3. Data security and access controls: Implementing appropriate data security measures and access controls to ensure that only authorized users can access and modify data through the Quick Add Lead form.
     
-4. Integration with existing customizations: Ensuring that the Quick Add Lead form solution seamlessly integrates with any existing customizations or scripts within the Orion suite.
+4. Integration with existing customizations: Ensuring that the Quick Add Lead form solution seamlessly integrates with any existing customizations or scripts within the Provia suite.
     
 
 ## Object Definitions
@@ -100,7 +100,7 @@ A detailed UI/UX design is not required for the Quick Add Lead form solution.
 
 ### Test Environment
 
-- NetSuite Sandbox account replicating the Orion suite configuration
+- NetSuite Sandbox account replicating the Provia suite configuration
     
 
 ### Test Data
@@ -156,7 +156,7 @@ A detailed UI/UX design is not required for the Quick Add Lead form solution.
 
 ### Test Script Approval
 
-- Submit the test script and test results to the designated reviewers, such as the Orion suite product owner and quality assurance lead, for approval.
+- Submit the test script and test results to the designated reviewers, such as the Provia suite product owner and quality assurance lead, for approval.
     
 - Ensure that the test script meets the defined acceptance criteria and that all critical and high-severity defects have been resolved before considering the Quick Add Lead form solution ready for deployment.
     

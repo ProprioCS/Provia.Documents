@@ -14,7 +14,7 @@
         - 8.1.3 [Test Environment:](#Test-Environment%3A)
         - 8.1.4 [Test Data:](#Test-Data%3A)
         - 8.1.5 [Test Steps:](#Test-Steps%3A)
-        - 8.1.6  [Test Assertions:](#Test-Assertions%3A)
+        - 8.1.6  [Test Assertions:](#Test-Assertions%3A)
         - 8.1.7 [Test Metrics:](#Test-Metrics%3A)
         - 8.1.8 [Test Execution:](#Test-Execution%3A)
         - 8.1.9 [Test Results:](#Test-Results%3A)
@@ -25,7 +25,7 @@
 
 ## Overview
 
-The proposed solution for the Order Team in Orion is designed to streamline the assignment and tracking of team members working on specific orders within a dealer. The main purpose of this solution is to enhance collaboration, communication, and efficiency among team members by providing a clear indication of who is responsible for each aspect of an order, from the initial Opportunity stage through the Quote and Sales Order stages.
+The proposed solution for the Order Team in Provia is designed to streamline the assignment and tracking of team members working on specific orders within a dealer. The main purpose of this solution is to enhance collaboration, communication, and efficiency among team members by providing a clear indication of who is responsible for each aspect of an order, from the initial Opportunity stage through the Quote and Sales Order stages.
 
 Key benefits for MillerKnoll dealers include:
 
@@ -44,7 +44,7 @@ Key benefits for MillerKnoll dealers include:
 
 ## User Stories
 
-1. As a Sales Rep, I want to easily assign an Order Team to an Opportunity, so that I can ensure the right people are involved from the start of the sales process.  A Design Manager may have to…
+1. As a Sales Rep, I want to easily assign an Order Team to an Opportunity, so that I can ensure the right people are involved from the start of the sales process. A Design Manager may have to…
     
 2. As a Manager, I want to have a clear overview of the Order Team assignments across all Opportunities, Quotes, Sales Orders, and Purchase Orders, so that I can effectively monitor team workload, identify potential bottlenecks, and ensure smooth order processing.
     
@@ -68,7 +68,7 @@ Key benefits for MillerKnoll dealers include:
 
 ## Design
 
-As an experienced NetSuite Solution Architect, I recommend the following UI/UX design elements for the Order Team utility in Orion:
+As an experienced NetSuite Solution Architect, I recommend the following UI/UX design elements for the Order Team utility in Provia:
 
 1. Order Team Sublist:
     
@@ -259,7 +259,7 @@ By incorporating these features and functionality into the Order Team utility, M
 5. Create a new Purchase Order from the Sales Order and verify that the Order Team assignments are carried over
     
 
-###  Test Assertions:
+###  Test Assertions:
 
 - Order Team members can be assigned and modified on transactions by authorized users
     

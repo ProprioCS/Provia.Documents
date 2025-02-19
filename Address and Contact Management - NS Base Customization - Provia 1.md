@@ -1,24 +1,3 @@
-- 1 [Overview](#Overview)
-- 2 [Solution Type](#Solution-Type)
-- 3 [User Stories](#User-Stories)
-- 4 [Success Metrics](#Success-Metrics)
-- 5 [Design](#Design)
-- 6 [Features and Functionality](#Features-and-Functionality)
-- 7 [Technical Specifications](#Technical-Specifications)
-    - 7.1 [Object Definitions](#Object-Definitions)
-        - 7.1.1 [Custom Fields and Records](#Custom-Fields-and-Records)
-    - 7.2 [Scripts and Automations](#Scripts-and-Automations)
-        - 7.2.1 [Rest Endpoints](#Rest-Endpoints)
-            - 7.2.1.1 [Entities Endpoint:](#Entities-Endpoint%3A)
-            - 7.2.1.2 [Addresses Endpoint:](#Addresses-Endpoint%3A)
-            - 7.2.1.3 [Contacts Endpoint:](#Contacts-Endpoint%3A)
-        - 7.2.2 [Scripts and Workflows:](#Scripts-and-Workflows%3A)
-- 8 [Testing and Quality Assurance](#Testing-and-Quality-Assurance)
-    - 8.1 [Unit Tests](#Unit-Tests)
-    - 8.2 [Process Tests](#Process-Tests)
-- 9 [Time Estimate](#Time-Estimate)
-- 10 [Changes And Revisions](#Changes-And-Revisions)
-
 ## Overview
 
 The NetSuite customizations for the Address and Contact Management will focus on extending the platform's functionality to support the enhanced address and contact management features. The customizations will handle data storage, validation, and integration with existing NetSuite records and transactions.
@@ -210,4 +189,4 @@ Be sure to Tag Dev (Luke) any time a new change is made. Format will be
     1. Details
         
 
-Be the first to add a reaction
+Be the first to add a reaction 

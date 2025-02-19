@@ -11,12 +11,12 @@
     - 5.3 [Scripts and Automations](#Scripts-and-Automations)
 - 6 [Testing Process](#Testing-Process)
     - 6.1 [Unit Tests](#Unit-Tests)
-    - 6.2 [Process TestsSample Test Script: Orion Quote Approval Workflow](#Process-Tests%5BhardBreak%5DSample-Test-Script%3A-Orion-Quote-Approval-Workflow)
+    - 6.2 [Process TestsSample Test Script: Provia Quote Approval Workflow](#Process-Tests%5BhardBreak%5DSample-Test-Script%3A-Provia-Quote-Approval-Workflow)
 - 7 [Time Estimate](#Time-Estimate)
 
 ## Overview
 
-The Orion Quote Approval Workflow is a customized solution designed to streamline and automate the quote approval process for contract furniture dealers using NetSuite. This solution enables sales representatives to easily submit quotes for approval, route them to the appropriate approvers based on predefined criteria, and track the approval status throughout the process. By implementing this workflow, contract furniture dealers can ensure that quotes are reviewed and approved by the necessary stakeholders before being sent to clients, reducing the risk of errors, inconsistencies, and potential loss of revenue due to low margins.
+The Provia Quote Approval Workflow is a customized solution designed to streamline and automate the quote approval process for contract furniture dealers using NetSuite. This solution enables sales representatives to easily submit quotes for approval, route them to the appropriate approvers based on predefined criteria, and track the approval status throughout the process. By implementing this workflow, contract furniture dealers can ensure that quotes are reviewed and approved by the necessary stakeholders before being sent to clients, reducing the risk of errors, inconsistencies, and potential loss of revenue due to low margins.
 
 ## Key Benefits
 
@@ -33,7 +33,7 @@ The Orion Quote Approval Workflow is a customized solution designed to streamlin
 
 ## Solution Type
 
-The Orion Quote Approval Workflow is classified as a Customization, as it involves creating custom fields, buttons, and workflows within the standard NetSuite environment to meet the specific requirements of the contract furniture industry.
+The Provia Quote Approval Workflow is classified as a Customization, as it involves creating custom fields, buttons, and workflows within the standard NetSuite environment to meet the specific requirements of the contract furniture industry.
 
 ## User Stories
 
@@ -60,7 +60,7 @@ As a sales representative, I want to easily submit quotes for approval and track
 
 ==The email template for notifying the sales rep (and potentially the order team) upon quote approval is the main item that needs to be defined and created.==
 
-==The Orion Quote Approval Workflow primarily relies on standard NetSuite functionality and UI/UX components, requiring no unique design considerations beyond the normal SuiteFlow capabilities.==
+==The Provia Quote Approval Workflow primarily relies on standard NetSuite functionality and UI/UX components, requiring no unique design considerations beyond the normal SuiteFlow capabilities.==
 
 ## ==Features== and Functionality
 
@@ -149,13 +149,13 @@ As a sales representative, I want to easily submit quotes for approval and track
 ## Unit Tests
 
 ## Process Tests  
-Sample Test Script: Orion Quote Approval Workflow
+Sample Test Script: Provia Quote Approval Workflow
 
-Objective: Validate the functionality, performance, and user experience of the Orion Quote Approval Workflow.
+Objective: Validate the functionality, performance, and user experience of the Provia Quote Approval Workflow.
 
 Prerequisites:
 
-1. NetSuite environment with the Orion Quote Approval Workflow customization installed and configured
+1. NetSuite environment with the Provia Quote Approval Workflow customization installed and configured
     
 2. Test data:
     

@@ -258,7 +258,7 @@ Figma Design: [https://www.figma.com/design/d7Q8e3UIQycq8n5VP2CDQ5/Acknowledgeme
 
 - Detailed wireframes/mockups
     
-- Style guide alignment with existing Orion UI
+- Style guide alignment with existing Provia UI
     
 - Component interaction flowcharts
     
@@ -271,38 +271,38 @@ Figma Design: [https://www.figma.com/design/d7Q8e3UIQycq8n5VP2CDQ5/Acknowledgeme
 
 ### Primary Users (Full Access)
 
-- Orion - Sales
+- Provia - Sales
     
-- Orion - Salesperson/Account Manager
+- Provia - Salesperson/Account Manager
     
-- Orion - Purchasing
+- Provia - Purchasing
     
-- Orion - Procurement
+- Provia - Procurement
     
-- Orion - Sales Support
+- Provia - Sales Support
     
 
 ### Secondary Users (View + Accept/Ignore)
 
-- Orion - Sales Leadership
+- Provia - Sales Leadership
     
-- Orion - Ops Manager
+- Provia - Ops Manager
     
-- Orion - Project Manager
+- Provia - Project Manager
     
 
 ### Oversight Access (View Only)
 
-- Orion - Executive Leadership
+- Provia - Executive Leadership
     
-- Orion - Controller/CFO
+- Provia - Controller/CFO
     
-- Orion - Daily Administrator
+- Provia - Daily Administrator
     
 
 ## Features and Functionality
 
-_In the future this solution could also be applied to vendor bills, but currently (as of 01/16/25) we can use NetSuite’s default three-way bill processing to fill the same need._
+_In the future this solution could also be applied to vendor bills, but currently (as of 01/16/25) we can use NetSuite's default three-way bill processing to fill the same need._
 
 ### User Actions
 
@@ -413,7 +413,7 @@ Here is a great example of where 2020 has a different DESCRIPTION than what HM Q
 
 ---
 
-Another example - and please note Point 3 - while not a line discrepancy that we have a field for, this is a very important piece of the Quote Tool response to the user to be able to capture and display to make them aware that this is a Restricted Product.  Lead Time is also important "extra" info - I envision those things to be displayed in one column stacked on top of each other... they are all in the API response XML that Orion receives.  This would be a big enhancement over CORE (IMO).
+Another example - and please note Point 3 - while not a line discrepancy that we have a field for, this is a very important piece of the Quote Tool response to the user to be able to capture and display to make them aware that this is a Restricted Product.  Lead Time is also important "extra" info - I envision those things to be displayed in one column stacked on top of each other... they are all in the API response XML that Provia receives.  This would be a big enhancement over CORE (IMO).
 
 ## Technical Considerations
 

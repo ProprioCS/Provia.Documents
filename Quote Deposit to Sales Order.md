@@ -108,28 +108,28 @@ Key Functionality:
 
 Edit Access (Full functionality including creating and modifying deposits):
 
-- Orion - Sales
+- Provia - Sales
     
-- Orion - Salesperson/ Account Manager
+- Provia - Salesperson/ Account Manager
     
-- Orion - Sales Support
+- Provia - Sales Support
     
-- Orion - Project Manager
+- Provia - Project Manager
     
-- Orion - Operations Admin/ Support
+- Provia - Operations Admin/ Support
     
-- Orion - Accounting Manager
+- Provia - Accounting Manager
     
-- Orion - Controller/CFO
+- Provia - Controller/CFO
     
-- Orion - A/R Analyst
+- Provia - A/R Analyst
     
-- Orion - Daily Administrator
+- Provia - Daily Administrator
     
 
 View Access (Can view deposit information but not create or modify):
 
-- All other Orion roles
+- All other Provia roles
     
 
 ## Features and Functionality
@@ -239,7 +239,7 @@ View Access (Can view deposit information but not create or modify):
         
 8. Integration with Existing Systems:
     
-    - Ensure compatibility with existing NetSuite customizations and other Orion components.
+    - Ensure compatibility with existing NetSuite customizations and other Provia components.
         
 9. Security:
     

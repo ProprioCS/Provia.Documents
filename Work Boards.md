@@ -66,7 +66,7 @@ The interface will follow the look and feel of the existing tool, found here:
 
 [https://dhtmlx.com/docs/products/dhtmlxKanban/](https://dhtmlx.com/docs/products/dhtmlxKanban/)
 
-Cards will use Orion view records with type "card" and utilize JSON cell definitions for layout, supporting different card areas (header, title, body) and formula functionality matching smart table capabilities. The layout and displayed fields will be configurable based on record type.
+Cards will use Provia view records with type "card" and utilize JSON cell definitions for layout, supporting different card areas (header, title, body) and formula functionality matching smart table capabilities. The layout and displayed fields will be configurable based on record type.
 
 ## Design Requests Kanban Board
 

@@ -267,7 +267,7 @@ Key UI/UX elements:
                 
         2. What these mean, for example, is if the total pre-tax amount on the Quote is $20000.00, it would be multiplied by the 2nd rate, 0.02076, and display a typical monthly payment of $415.20.
             
-        3. The LEAF API (documentation coming from LEAF) will allow us to get the specific dealer’s rates automatically by including the dealer number in the API call. We do not yet know if LEAF maintains their own dealer number for each dealer, or if they use the MillerKnoll dealer numbers. A good way to handle this would be to create a custom record or custom fields to store the rates, and have a nightly scheduled script to call the LEAF API to see if the rates have changed. This way when we are creating a Quote PDF, we do not need to call an external API.
+        3. The LEAF API (documentation coming from LEAF) will allow us to get the specific dealer's rates automatically by including the dealer number in the API call. We do not yet know if LEAF maintains their own dealer number for each dealer, or if they use the MillerKnoll dealer numbers. A good way to handle this would be to create a custom record or custom fields to store the rates, and have a nightly scheduled script to call the LEAF API to see if the rates have changed. This way when we are creating a Quote PDF, we do not need to call an external API.
             
         4. There is a minimum floor also - currently no Quote whose pre-tax total is < $5000.00 qualifies for the program. Therefore, regardless of whether the dealer user checks the LEAF Financing checkbox, the PDF should not contain this section if the amount is less than the floor.
             
@@ -284,7 +284,7 @@ Key UI/UX elements:
 
 ## Roles and Permissions
 
- **Orion - Marketing Specialist**
+**Provia - Marketing Specialist**
 
 1. Can access and use the PDF Composer
     
@@ -293,7 +293,7 @@ Key UI/UX elements:
 3. Can set default branding elements (e.g., logos, colors)
     
 
-**Orion - Salesperson/Account Manager**
+**Provia - Salesperson/Account Manager**
 
 1. Can access and use the PDF Composer
     
@@ -302,7 +302,7 @@ Key UI/UX elements:
 3. Can view and use layouts saved on Customer records
     
 
- **Orion - Sales Admin/Sales Support**
+**Provia - Sales Admin/Sales Support**
 
 1. Can access and use the PDF Composer
     
@@ -313,7 +313,7 @@ Key UI/UX elements:
 
 ## Technical Considerations
 
-Update: If a PDF of type Customer Proposal (aka Quote) is created for an unapproved Quote, the PDF should contain a watermark saying “Draft”. These should not be emailable from within NetSuite. There is of course no way to prevent a user from sending the document from Outlook.
+Update: If a PDF of type Customer Proposal (aka Quote) is created for an unapproved Quote, the PDF should contain a watermark saying "Draft". These should not be emailable from within NetSuite. There is of course no way to prevent a user from sending the document from Outlook.
 
 ## Technical Specifications
 

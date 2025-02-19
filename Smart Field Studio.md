@@ -22,9 +22,9 @@ The Requirements feature is a way to support these in the business system in a h
 
 This approach completely eliminates the needs for us to create a perfect "standard template" with every item a dealer might want, and none that they do not want. Which was an impossible task anyway. Each dealer simply adds and modifies as they want with no need for customization. Dealers will also refine their processes over time and make changes - and again we don't need to worry about that, they are affecting only their own data. Even if you could somehow account for every dealer with a standard template approach, it doesn't take into account that each dealer will continue to change and evolve over time.
 
-**Claude’s take:**
+**Claude's take:**
 
-The Requirements feature within Orion aims to streamline and centralize the management of pre-order checklists for contract furniture dealers. This solution allows dealers to create, customize, and maintain their own checklist items within their business system, eliminating the need for external documents and manual data entry.
+The Requirements feature within Provia aims to streamline and centralize the management of pre-order checklists for contract furniture dealers. This solution allows dealers to create, customize, and maintain their own checklist items within their business system, eliminating the need for external documents and manual data entry.
 
 Key benefits of the Requirements feature include:
 
@@ -34,27 +34,27 @@ Key benefits of the Requirements feature include:
     
 3. Improved Efficiency: The Requirements feature streamlines the order process by providing a structured and organized way to capture and manage pre-order checklist items, saving time and effort compared to manual documentation and data entry.
     
-4. Scalability and Adaptability: As dealers' processes evolve over time, they can easily modify and update their checklist items without requiring any customization or intervention from the Orion team, ensuring the solution remains relevant and effective for each dealer's unique needs.
+4. Scalability and Adaptability: As dealers' processes evolve over time, they can easily modify and update their checklist items without requiring any customization or intervention from the Provia team, ensuring the solution remains relevant and effective for each dealer's unique needs.
     
 
 ## Solution Type
 
-·       Modules – extensive functionality that may include external integrations, frameworks – big stuff·    
+· Modules – extensive functionality that may include external integrations, frameworks – big stuff·
 
 ## User Stories
 
-1. As any role with the ability to view a Quote or Sales Order, I want to see a tab with the list of the dealer’s requirements for this particular order.
+1. As any role with the ability to view a Quote or Sales Order, I want to see a tab with the list of the dealer's requirements for this particular order.
     
-2. As any role with the ability to create/edit a Quote or Sales Order, I want to see a tab with the list of the dealer’s requirement options, organized as the dealer has set up, along with any already entered in the case of edit, and be able to enter/select any which apply to this particular order.
+2. As any role with the ability to create/edit a Quote or Sales Order, I want to see a tab with the list of the dealer's requirement options, organized as the dealer has set up, along with any already entered in the case of edit, and be able to enter/select any which apply to this particular order.
     
-3. As an Administrator, I want to be able to manage all the dealer’s requirement options, change their category, create new ones, order them, set their attributes, and create overrides by any of the supported criteria.
+3. As an Administrator, I want to be able to manage all the dealer's requirement options, change their category, create new ones, order them, set their attributes, and create overrides by any of the supported criteria.
     
-4. As a role responsible for supplying Labor/Design/PM quotes, I want to see this Quote/Order’s entered requirements in order to better provide an accurate quote.
+4. As a role responsible for supplying Labor/Design/PM quotes, I want to see this Quote/Order's entered requirements in order to better provide an accurate quote.
     
 
 ## Design
 
-These screen grabs are from current dealers' Connect systems, and included here as examples and to help explain - the Orion UI can be different. These are all generated in code by the rendering function, so to change how they look we need only change CSS styles.
+These screen grabs are from current dealers' Connect systems, and included here as examples and to help explain - the Provia UI can be different. These are all generated in code by the rendering function, so to change how they look we need only change CSS styles.
 
 One dealer's (Catalyst) default requirements on a Quote or Order, as currently configured:
 
@@ -78,7 +78,7 @@ The Requirement Options are the list of these items, and any can be associated w
 
 - On/Off (checkbox)
     
-- Yes/No (dropdown) (this is the new one that supports “required” better than a checkbox)
+- Yes/No (dropdown) (this is the new one that supports "required" better than a checkbox)
     
 - Date
     
@@ -103,7 +103,7 @@ There are also field-type dependent settings, for example for a Date you can spe
 
 **Default, Required, and Visible:**
 
-- _Default_: The dealer can specify that any requirement option should default to "checked" or "yes". They can specify default text, or number, or date or a select option. 
+- _Default_: The dealer can specify that any requirement option should default to "checked" or "yes". They can specify default text, or number, or date or a select option. 
     
 - _Required_: They can also specify that any option is required - the user must enter/check/select something. This has no meaning for the On/Off checkbox, as leaving it unchecked is a valid option. This is why Jenna asked for the Yes/No dropdown - if set to required, it forces the user to choose one of those.
     
@@ -127,13 +127,13 @@ Regardless of a particular option's Default, Required, and Visible setting, thes
 
 Overrides by **Stage** in NetSuite mean by transaction type. For example, the dealer may want a particular requirement to be not required at the Quote stage, but become required at the Order stage (or any later stage). If the user knows the answer at the Quote stage, they can record it. But if not, they can leave it blank - until the Order stage, where the dealer now wants it to be required. Other stages are Labor Quote, Design Quote and Work Order.
 
-As an example of a **Customer** override, it isn't uncommon for a dealer to need various badges at times. Catalyst for example has a few of these. They created requirement options for Amazon Badge and T-Mobile badge (and some other ones). This is where "Visible" comes into play. They set these to not be visible. But then overrode them by Customer. So if they are creating an Order for some other customer, they do not see these options at all. Only if they create one for Amazon, Amazon Badge appears - and is set to Default and Required. 
+As an example of a **Customer** override, it isn't uncommon for a dealer to need various badges at times. Catalyst for example has a few of these. They created requirement options for Amazon Badge and T-Mobile badge (and some other ones). This is where "Visible" comes into play. They set these to not be visible. But then overrode them by Customer. So if they are creating an Order for some other customer, they do not see these options at all. Only if they create one for Amazon, Amazon Badge appears - and is set to Default and Required. 
 
 You can also override by **Order Type** - so for a Walls Order (as opposed to Furniture or Standard), a different set of options can be displayed and/or defaulted. The same would go for a Moves order, or Flooring, or AV - some normal requirements may not apply to these, while others may only apply to these. Another example - you can have one for ServiceNet #, which becomes visible only when the Order Type is Intermarket.
 
-You can also override by **Work Order Event Type**. For example, if a user creates a Work Order Event of type Walls, a different set of requirements would be displayed than for one of type Furniture D&I. Some Event types would hide almost all of them - for example “Customer Pickup”.
+You can also override by **Work Order Event Type**. For example, if a user creates a Work Order Event of type Walls, a different set of requirements would be displayed than for one of type Furniture D&I. Some Event types would hide almost all of them - for example "Customer Pickup".
 
-And finally, for the requirements that can attach to a Labor Resource, you can override by the **Labor Resource Type**. An example would be an option for if an Installer has a particular badge, or clearance, or CDL. You would want this visible for a human type, but not a Truck type. But you might want another called “Scheduled Service” to appear for the truck type, but not the human type.
+And finally, for the requirements that can attach to a Labor Resource, you can override by the **Labor Resource Type**. An example would be an option for if an Installer has a particular badge, or clearance, or CDL. You would want this visible for a human type, but not a Truck type. But you might want another called "Scheduled Service" to appear for the truck type, but not the human type.
 
 The overrides avoid having every conceivable item always on screen, even when they are not applicable.
 
@@ -143,7 +143,7 @@ A comprehensive interface is provided to allow a dealer to manage all aspects of
 
 **Where do Requirement Options appear?**
 
-In the previous Orion, we had them appear only in a Work Order or Labor Resource. Now we can have them appear in Quotes, Orders, and Customer Sites. They can also appear when submitting a Labor Quote Request or a Design Quote Request, as the requirement values do a much better job of communication than any free-form text could. In all cases we just need a container for the function to render to, and then handle the validation and save.
+In the previous Provia, we had them appear only in a Work Order or Labor Resource. Now we can have them appear in Quotes, Orders, and Customer Sites. They can also appear when submitting a Labor Quote Request or a Design Quote Request, as the requirement values do a much better job of communication than any free-form text could. In all cases we just need a container for the function to render to, and then handle the validation and save.
 
 ## Technical Considerations
 
@@ -158,7 +158,7 @@ In the previous Orion, we had them appear only in a Work Order or Labor Resource
 
 This makes the actual values accessible by saved searches anywhere we want them to display.
 
-**Note about scope:** This looks like a big scope - and it is - but it is an area in which we can be way better than the other systems. The dealers who have this today (e.g. Catalyst) really like how it lets them fine tune their process, and would not want to lose it. Others (like COI) who do not have it today really liked it when they saw it for Work Orders and Labor Resources only. The good news is that while yes, it's big, it is also largely complete in Orion - once we can restore all of it to an instance with the new architecture in place. We only need to hook it up to Quotes/Orders, and build Labor Quoting/Design Quoting and Customer Site Conditions to use it - and we were going to have to build those areas anyway. 
+**Note about scope:** This looks like a big scope - and it is - but it is an area in which we can be way better than the other systems. The dealers who have this today (e.g. Catalyst) really like how it lets them fine tune their process, and would not want to lose it. Others (like COI) who do not have it today really liked it when they saw it for Work Orders and Labor Resources only. The good news is that while yes, it's big, it is also largely complete in Provia - once we can restore all of it to an instance with the new architecture in place. We only need to hook it up to Quotes/Orders, and build Labor Quoting/Design Quoting and Customer Site Conditions to use it - and we were going to have to build those areas anyway. 
 
 ## Technical Specifications
 
@@ -265,13 +265,13 @@ custrecord_rc_object_type
 
 custrecord_rc_display_order
 
-Getting rid of this one - it was redundant. Now each Category belongs to an Object Type, so we don’t need this link record:
+Getting rid of this one - it was redundant. Now each Category belongs to an Object Type, so we don't need this link record:
 
 **customrecord_orion_req_category_object**  
 id  
 isinactive  
 custrecord_rco_category_id  
-custrecord_rco_object_type (“Quote”, “Order”, “CustomerSite”, "Event", "Resource", “RequestType”) (customlist - and as a dealer defines new request types we will add them to the list so they can assign requirement categories to them)
+custrecord_rco_object_type ("Quote", "Order", "CustomerSite", "Event", "Resource", "RequestType") (customlist - and as a dealer defines new request types we will add them to the list so they can assign requirement categories to them)
 
 custrecord_rco_display_order
 
@@ -285,7 +285,7 @@ custrecord_rcm_name_override
 
 Rethinking this: we had override records for: Stage, Customer, Order Type, Work Order Event Type, and Labor Resource Type. It would be better to have one record for overrides with am Override Type ID
 
-So let’s do this:
+So let's do this:
 
 **customrecord_orion_requirement_override**
 
@@ -378,7 +378,7 @@ custrecord_rv_value_url
 
 ## Scripts and Automations
 
-Scripts from the 1st Orion project:
+Scripts from the 1st Provia project:
 
 - orion_reqs.js (was a suitelet - functions to load reqs data for an object (existing or new), and to save)
     
@@ -393,10 +393,10 @@ orion_reqs.js will become a restlet named _____
 
 **Endpoints:**
 
-1. Loading the Requirement Options for a new object, by Category, based on the Requirement Object type. Payload will include the Requirement Object type (Quote, Order, Request Type (e.g. Labor Quote, Design Quote, etc), Customer Site, Labor Resource. We will 1st focus only on those, but later the payload will also include any predecessor objects - for example if the new object is a Request stemming from a Quote, the Quote ID. The new Objects initial requirement settings are then defaulted to the predecessor’s matching ones (by Req Option ID), if any. Another example is a Customer Install Address - if its ID is in the payload, we will load any saved Requirement values for it. But until we have a new Request from a Quote, no need to worry about the inheritance.
+1. Loading the Requirement Options for a new object, by Category, based on the Requirement Object type. Payload will include the Requirement Object type (Quote, Order, Request Type (e.g. Labor Quote, Design Quote, etc), Customer Site, Labor Resource. We will 1st focus only on those, but later the payload will also include any predecessor objects - for example if the new object is a Request stemming from a Quote, the Quote ID. The new Objects initial requirement settings are then defaulted to the predecessor's matching ones (by Req Option ID), if any. Another example is a Customer Install Address - if its ID is in the payload, we will load any saved Requirement values for it. But until we have a new Request from a Quote, no need to worry about the inheritance.
     
 
-Example for getting the options by category for a Request of type 1 - “Labor Quote - Internal”
+Example for getting the options by category for a Request of type 1 - "Labor Quote - Internal"
 
 The Object Types are in custom record: customrecord_orion_requirement_objects
 
@@ -404,7 +404,7 @@ Labor Quote Internal is ID 6
 
 {reqObjectType: 6, predecessorObjectType: null, predecessorID: null}
 
-Note: we can load them now just for the LQ request type, then later allow the predecessorObjectType to be “transaction” and supply a transaction ID - after we have saved requirements for at least one Quote
+Note: we can load them now just for the LQ request type, then later allow the predecessorObjectType to be "transaction" and supply a transaction ID - after we have saved requirements for at least one Quote
 
 **Sample queries and code for the above in the file I emailed**
 

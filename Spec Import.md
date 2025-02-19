@@ -44,12 +44,12 @@ Module
     
 2. ==As a project manager, I want to drag and drop a BOM file onto an existing quote to update it with the latest specifications without manual data entry.==
     
-3. ==As a purchasing agent for my dealership, I want to import a vendor-provided BOM directly into a purchase order when I am buying showroom furniture, demo chairs, or other products for the dealer’s own stock/use.==
+3. ==As a purchasing agent for my dealership, I want to import a vendor-provided BOM directly into a purchase order when I am buying showroom furniture, demo chairs, or other products for the dealer's own stock/use.==
     
 
 ## Success Metrics
 
-1. Import Speed: The Orion BOM Import Tool should be able to import files within seconds, ensuring high performance and minimal wait times for users.
+1. Import Speed: The Provia BOM Import Tool should be able to import files within seconds, ensuring high performance and minimal wait times for users.
     
 2. Line Item Capacity: The tool should be capable of importing up to 2,000 line items per file, accommodating the needs of large-scale projects and complex BOMs.
     
@@ -57,7 +57,7 @@ Module
     
 4. Data Integrity: The imported data should maintain its integrity, with all information accurately transferred from the source file to the corresponding NetSuite records.
     
-5. Error Handling and Reporting: The Orion BOM Import Tool should provide comprehensive error handling and generate exception reports, allowing users to validate the imported data and quickly identify and resolve any discrepancies.
+5. Error Handling and Reporting: The Provia BOM Import Tool should provide comprehensive error handling and generate exception reports, allowing users to validate the imported data and quickly identify and resolve any discrepancies.
     
     - What items did not get imported
         
@@ -68,7 +68,7 @@ Module
 
 ## Design
 
-The user interface for the Orion BOM Import Tool has been designed by Chris Trumble and is available in Figma. The development team can access the design in Confluence.
+The user interface for the Provia BOM Import Tool has been designed by Chris Trumble and is available in Figma. The development team can access the design in Confluence.
 
 Figma link: [https://www.figma.com/design/sMeD8uO27aeK7QPSHPFDor/BOM-Import?node-id=0-1&t=ISqWd4Gq5whNRIil-1](https://www.figma.com/design/sMeD8uO27aeK7QPSHPFDor/BOM-Import?node-id=0-1&t=ISqWd4Gq5whNRIil-1)
 
@@ -82,32 +82,32 @@ Key UI/UX elements:
     
 - Support for adding multiple files simultaneously and arranging their import order by dragging and dropping within the tool.
     
-- Placeholder for the upcoming Orion color scheme and branding, which will be incorporated into the design to ensure consistency with the overall Orion ecosystem.
+- Placeholder for the upcoming Provia color scheme and branding, which will be incorporated into the design to ensure consistency with the overall Provia ecosystem.
     
 
-The development team should refer to the Figma design for detailed specifications, visual elements, and user flow. The design may need to be updated once the Orion color scheme and branding guidelines are finalized.
+The development team should refer to the Figma design for detailed specifications, visual elements, and user flow. The design may need to be updated once the Provia color scheme and branding guidelines are finalized.
 
 ## Roles and Permissions
 
-The following Orion roles should have access to the BOM Import Tool:
+The following Provia roles should have access to the BOM Import Tool:
 
-1. Orion - Sales Leadership: This role may need to access the tool for reviewing and analyzing sales quotes and orders.
+1. Provia - Sales Leadership: This role may need to access the tool for reviewing and analyzing sales quotes and orders.
     
-2. Orion - Salesperson/Account Manager: Salespersons and account managers will use the tool to import BOMs and create quotes for their customers.
+2. Provia - Salesperson/Account Manager: Salespersons and account managers will use the tool to import BOMs and create quotes for their customers.
     
-3. Orion - Sales/Admin/Sales Support: These roles will likely assist in preparing and managing sales quotes and orders using the imported BOM data.
+3. Provia - Sales/Admin/Sales Support: These roles will likely assist in preparing and managing sales quotes and orders using the imported BOM data.
     
-4. Orion - Design Manager: Design managers may need to access the tool to review and approve BOMs before they are imported into NetSuite.
+4. Provia - Design Manager: Design managers may need to access the tool to review and approve BOMs before they are imported into NetSuite.
     
-5. Orion - Designer: Designers will use the tool to import their designs and specifications into NetSuite for further processing.
+5. Provia - Designer: Designers will use the tool to import their designs and specifications into NetSuite for further processing.
     
-6. Orion - Purchasing: The purchasing team may need to access the tool to review and process purchase orders based on the imported BOM data.
+6. Provia - Purchasing: The purchasing team may need to access the tool to review and process purchase orders based on the imported BOM data.
     
-7. Orion - Ops Manager: Operations managers will oversee the use of the tool and ensure smooth integration with other operational processes.
+7. Provia - Ops Manager: Operations managers will oversee the use of the tool and ensure smooth integration with other operational processes.
     
-8. Orion - Project Manager: Project managers will heavily rely on the tool to import BOMs and manage project-related quotes and orders.
+8. Provia - Project Manager: Project managers will heavily rely on the tool to import BOMs and manage project-related quotes and orders.
     
-9. Orion - Operations Admin/Support: These roles will provide support and assistance to users of the BOM Import Tool.
+9. Provia - Operations Admin/Support: These roles will provide support and assistance to users of the BOM Import Tool.
     
 
 All these roles should have create permissions to allow them to import BOMs and generate the necessary transactions in NetSuite.
@@ -207,9 +207,9 @@ All these roles should have create permissions to allow them to import BOMs and 
 
 ### Dependencies
 
-- SIF to JSON: JSON will be generated using [https://suitecentric.atlassian.net/wiki/spaces/Orion/pages/2181234689](https://suitecentric.atlassian.net/wiki/spaces/Orion/pages/2181234689)
+- SIF to JSON: JSON will be generated using [https://suitecentric.atlassian.net/wiki/spaces/Provia/pages/2181234689](https://suitecentric.atlassian.net/wiki/spaces/Provia/pages/2181234689)
     
-- Line Item Display: Line items are displayed using the [https://suitecentric.atlassian.net/wiki/spaces/Orion/pages/2178908165](https://suitecentric.atlassian.net/wiki/spaces/Orion/pages/2178908165)
+- Line Item Display: Line items are displayed using the [https://suitecentric.atlassian.net/wiki/spaces/Provia/pages/2178908165](https://suitecentric.atlassian.net/wiki/spaces/Provia/pages/2178908165)
     
 
 ### Configuration JSON

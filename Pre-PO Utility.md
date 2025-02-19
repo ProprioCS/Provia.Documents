@@ -1,4 +1,4 @@
-- 1 [Orion Pre-PO Utility](#Orion-Pre-PO-Utility)
+- 1 [Provia Pre-PO Utility](#Provia-Pre-PO-Utility)
 - 2 [Technical Specifications](#Technical-Specifications)
     - 2.1 [Object Definitions](#Object-Definitions)
     - 2.2 [Data Design](#Data-Design)
@@ -9,14 +9,14 @@
 - 4 [Time Estimate](#Time-Estimate)
 - 5 [Changes And Revisions](#Changes-And-Revisions)
 
-## **Orion Pre-PO Utility**
+## **Provia Pre-PO Utility**
 
 **Overview**  
-The Orion Pre-PO Utility is a utility designed to streamline the purchase order creation and acknowledgment process for contract furniture dealers using Orion. This solution allows users to generate preliminary purchase orders (pre-POs) directly from the sales order smart table, with the ability to split POs based on various criteria such as vendors, ship addresses, requested ship date, tag 1, and contract numbers. The pre-PO data is stored in a custom record, and the corresponding transaction lines in the smart table are populated with the pre-PO and PO line numbers. Users can generate and manage PDF versions of the pre-POs using the PDF composer utility. Acknowledgments are handled within the sales order smart table, eliminating the need for a separate order adjustment solution. The system processes acknowledgments and stores the data in the smart table columns, with the potential to use AI for processing acknowledgment PDFs. Users can finalize the pre-PO, which generates the actual NetSuite PO and updates the sales order accordingly. This solution enhances efficiency, improves data accuracy, and provides a centralized, user-friendly interface for managing the PO process.
+The Provia Pre-PO Utility is a utility designed to streamline the purchase order creation and acknowledgment process for contract furniture dealers using Provia. This solution allows users to generate preliminary purchase orders (pre-POs) directly from the sales order smart table, with the ability to split POs based on various criteria such as vendors, ship addresses, requested ship date, tag 1, and contract numbers. The pre-PO data is stored in a custom record, and the corresponding transaction lines in the smart table are populated with the pre-PO and PO line numbers. Users can generate and manage PDF versions of the pre-POs using the PDF composer utility. Acknowledgments are handled within the sales order smart table, eliminating the need for a separate order adjustment solution. The system processes acknowledgments and stores the data in the smart table columns, with the potential to use AI for processing acknowledgment PDFs. Users can finalize the pre-PO, which generates the actual NetSuite PO and updates the sales order accordingly. This solution enhances efficiency, improves data accuracy, and provides a centralized, user-friendly interface for managing the PO process.
 
-**Solution Title** Orion Pre-PO Utility
+**Solution Title** Provia Pre-PO Utility
 
-**Solution Type** Utility (part of the Orion Navigator tool)
+**Solution Type** Utility (part of the Provia Navigator tool)
 
 **User Stories**
 
@@ -33,14 +33,14 @@ The Orion Pre-PO Utility is a utility designed to streamline the purchase order 
     
 2. Accuracy improvement: Track the reduction in errors and discrepancies between POs, acknowledgments, and smart table data. This metric will highlight the improved accuracy and data integrity resulting from the streamlined pre-PO process.
     
-3. User adoption: Monitor the percentage of project coordinators and their managers actively using the pre-PO functionality within Orion. High user adoption rates will indicate the solution's ease of use and effectiveness in addressing user needs.
+3. User adoption: Monitor the percentage of project coordinators and their managers actively using the pre-PO functionality within Provia. High user adoption rates will indicate the solution's ease of use and effectiveness in addressing user needs.
     
 4. Successful line constitution: Measure the percentage of pre-PO lines that are successfully constituted on the NetSuite native PO and the sales order. This metric will ensure that the pre-PO data is accurately reflected in the final documents.
     
 5. Financial accuracy: Verify that the combination of constituted lines and summary lines results in the appropriate total on the sales order. This metric will confirm that the financial data remains accurate throughout the pre-PO process and is correctly reflected in NetSuite.
     
 
-**Design** The pre-PO functionality will be seamlessly integrated into the Orion Navigator tool, providing a user-friendly and intuitive interface for managing preliminary purchase orders. The design philosophy focuses on simplicity, efficiency, and ease of use, ensuring that project coordinators and their managers can quickly generate, process, and update pre-POs within the sales order smart table.
+**Design** The pre-PO functionality will be seamlessly integrated into the Provia Navigator tool, providing a user-friendly and intuitive interface for managing preliminary purchase orders. The design philosophy focuses on simplicity, efficiency, and ease of use, ensuring that project coordinators and their managers can quickly generate, process, and update pre-POs within the sales order smart table.
 
 Key screens and user interactions:
 
@@ -55,34 +55,34 @@ Key screens and user interactions:
 5. Line constitution: Once the pre-PO process is complete, users can finalize the pre-PO, which will constitute the lines on the NetSuite native PO and update the sales order accordingly.
     
 
-UI screens: Chris Trumble, a member of the Orion team, is currently creating detailed UI screens for the pre-PO functionality. These screens will serve as a visual reference for the development team, ensuring that the final implementation aligns with the intended design and user experience. The UI screens will be linked to this design section once they are complete.
+UI screens: Chris Trumble, a member of the Provia team, is currently creating detailed UI screens for the pre-PO functionality. These screens will serve as a visual reference for the development team, ensuring that the final implementation aligns with the intended design and user experience. The UI screens will be linked to this design section once they are complete.
 
 **Roles and Permissions**
 
-1. Orion - Admin (Edit): As the main administrators of the Orion system, this role should have full edit access to the pre-PO functionality to manage and support the utility.
+1. Provia - Admin (Edit): As the main administrators of the Provia system, this role should have full edit access to the pre-PO functionality to manage and support the utility.
     
-2. Orion - Sales Support (Edit): Sales Support users will need edit access to generate pre-POs, process acknowledgments, and update smart table data to assist the sales team effectively.
+2. Provia - Sales Support (Edit): Sales Support users will need edit access to generate pre-POs, process acknowledgments, and update smart table data to assist the sales team effectively.
     
-3. Orion - Purchasing (Edit): Purchasing users will require edit access to the pre-PO functionality to generate and manage POs, process acknowledgments, and update smart table data as part of their core responsibilities.
+3. Provia - Purchasing (Edit): Purchasing users will require edit access to the pre-PO functionality to generate and manage POs, process acknowledgments, and update smart table data as part of their core responsibilities.
     
-4. Orion - Procurement (Edit): Similar to Purchasing, Procurement users will need edit access to the pre-PO utility to fulfill their roles in managing POs and related tasks.
+4. Provia - Procurement (Edit): Similar to Purchasing, Procurement users will need edit access to the pre-PO utility to fulfill their roles in managing POs and related tasks.
     
-5. Orion - Ops Manager (View): Operations Managers should have view access to the pre-PO functionality to oversee the purchasing process and monitor performance without needing to make edits.
+5. Provia - Ops Manager (View): Operations Managers should have view access to the pre-PO functionality to oversee the purchasing process and monitor performance without needing to make edits.
     
-6. Orion - Project Manager (Edit): Project Managers will need edit access to generate pre-POs, process acknowledgments, and update smart table data for their specific projects.
+6. Provia - Project Manager (Edit): Project Managers will need edit access to generate pre-POs, process acknowledgments, and update smart table data for their specific projects.
     
-7. Orion - Operations Admin/ Support (Edit): Operations Admin and Support users will require edit access to assist with pre-PO tasks and provide support to other users.
+7. Provia - Operations Admin/ Support (Edit): Operations Admin and Support users will require edit access to assist with pre-PO tasks and provide support to other users.
     
-8. Orion - Controller/CFO (View): Controllers and CFOs should have view access to the pre-PO functionality to monitor financial data and ensure accuracy without needing to make edits.
+8. Provia - Controller/CFO (View): Controllers and CFOs should have view access to the pre-PO functionality to monitor financial data and ensure accuracy without needing to make edits.
     
-9. Orion - A/P Analyst (View): Accounts Payable Analysts will need view access to the pre-PO data to reconcile invoices and process payments.
+9. Provia - A/P Analyst (View): Accounts Payable Analysts will need view access to the pre-PO data to reconcile invoices and process payments.
     
 
-All other Orion user roles not mentioned above will have view access to the pre-PO functionality by default, allowing them to access relevant information without the ability to make edits.
+All other Provia user roles not mentioned above will have view access to the pre-PO functionality by default, allowing them to access relevant information without the ability to make edits.
 
 **Features and Functionality**
 
-- User-friendly interface integrated into the Orion Navigator tool
+- User-friendly interface integrated into the Provia Navigator tool
     
 - Ability to select lines from the sales order smart table and generate pre-POs
     
@@ -117,7 +117,7 @@ All other Orion user roles not mentioned above will have view access to the pre-
 
 **Technical Considerations**
 
-1. Integration with the Orion Navigator tool and sales order smart table
+1. Integration with the Provia Navigator tool and sales order smart table
     
 2. Custom record creation for preliminary purchase orders and PO number generation
     
@@ -128,13 +128,13 @@ All other Orion user roles not mentioned above will have view access to the pre-
 
 **Testing and Quality Assurance**
 
-_Test Script Title_ "Orion Pre-PO Utility Test Script"
+_Test Script Title_ "Provia Pre-PO Utility Test Script"
 
 _Test Objectives_
 
 1. Verify that users can generate pre-POs, process acknowledgments, update smart table data, and constitute lines accurately and efficiently.
     
-2. Ensure that the pre-PO functionality is seamlessly integrated with the Orion Navigator tool and provides a user-friendly experience.
+2. Ensure that the pre-PO functionality is seamlessly integrated with the Provia Navigator tool and provides a user-friendly experience.
     
 3. Validate that the AI-based acknowledgment processing accurately converts PDFs and emails to JSON and displays the data correctly in the smart table for comparison.
     

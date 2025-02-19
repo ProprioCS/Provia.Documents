@@ -17,7 +17,7 @@ Key benefits include:
 
 ## Solution Title
 
-Orion Proforma Invoice Management
+Provia Proforma Invoice Management
 
 ## Solution Type
 
@@ -66,27 +66,27 @@ The proforma invoice solution will integrate seamlessly with the existing NetSui
 
 ## Roles and Permissions
 
-The following Orion user roles will have access to the proforma invoice functionality:
+The following Provia user roles will have access to the proforma invoice functionality:
 
-- Orion - Executive Leadership
+- Provia - Executive Leadership
     
-- Orion - Sales Leadership
+- Provia - Sales Leadership
     
-- Orion - Sales
+- Provia - Sales
     
-- Orion - Salesperson/Account Manager
+- Provia - Salesperson/Account Manager
     
-- Orion - Admin
+- Provia - Admin
     
-- Orion - Sales Support
+- Provia - Sales Support
     
-- Orion - Accounting Manager
+- Provia - Accounting Manager
     
-- Orion - Controller/CFO
+- Provia - Controller/CFO
     
-- Orion - A/R Analyst
+- Provia - A/R Analyst
     
-- Orion - Daily Administrator
+- Provia - Daily Administrator
     
 
 ## Features and Functionality
@@ -159,7 +159,7 @@ The following Orion user roles will have access to the proforma invoice function
 
 ### Test Script Title
 
-Orion Proforma Invoice Management Test Script
+Provia Proforma Invoice Management Test Script
 
 ### Test Objectives
 

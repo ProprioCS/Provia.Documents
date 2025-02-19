@@ -27,9 +27,9 @@
 
 ## Solution Overview
 
-The Smart Table Invoice Management solution enhances Orion's core transaction processing capabilities by providing an integrated interface for invoice creation and data manipulation directly within the Smart Table. This comprehensive solution enables users to generate invoices from selected lines, perform bulk data operations including quantity adjustments and column data transfers, while maintaining proper revenue recognition and accounting accuracy.
+The Smart Table Invoice Management solution enhances Provia's core transaction processing capabilities by providing an integrated interface for invoice creation and data manipulation directly within the Smart Table. This comprehensive solution enables users to generate invoices from selected lines, perform bulk data operations including quantity adjustments and column data transfers, while maintaining proper revenue recognition and accounting accuracy.
 
-The solution streamlines complex billing workflows through intelligent handling of constituted lines, progressive billing scenarios, and flexible data management tools - all accessible through Orion's familiar Smart Table interface. By integrating these capabilities directly into the dealer's primary workspace, it significantly reduces manual effort while ensuring data integrity across NetSuite transactions.
+The solution streamlines complex billing workflows through intelligent handling of constituted lines, progressive billing scenarios, and flexible data management tools - all accessible through Provia's familiar Smart Table interface. By integrating these capabilities directly into the dealer's primary workspace, it significantly reduces manual effort while ensuring data integrity across NetSuite transactions.
 
 ## Solution Type
 
@@ -112,29 +112,29 @@ Supporting design documents should include mockups for:
 
 Primary Roles (Full Access):
 
-- Orion - Accounting Manager
+- Provia - Accounting Manager
     
-- Orion - A/R Analyst
+- Provia - A/R Analyst
     
-- Orion - Controller/CFO
+- Provia - Controller/CFO
     
-- Orion - Daily Administrator
+- Provia - Daily Administrator
     
 
 Limited Access:
 
-- Orion - Operations Admin/Support (Can create invoices for service lines only)
+- Provia - Operations Admin/Support (Can create invoices for service lines only)
     
-- Orion - Project Manager (Can create invoices for service lines only)
+- Provia - Project Manager (Can create invoices for service lines only)
     
 
 View Only:
 
-- Orion - Sales Support
+- Provia - Sales Support
     
-- Orion - Sales
+- Provia - Sales
     
-- Orion - Sales Leadership
+- Provia - Sales Leadership
     
 
 No Access:

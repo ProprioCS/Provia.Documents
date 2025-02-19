@@ -23,13 +23,13 @@
 
 ## Overview
 
-The Orion Operations modules encompass several different aspects of a typical dealer’s “operational” practices. These include:
+The Provia Operations modules encompass several different aspects of a typical dealer's "operational" practices. These include:
 
-Receiving POs into one of the Dealer’s Warehouses, using Bins, with an improved interface over the default NetSuite Inventory Detail popup.
+Receiving POs into one of the Dealer's Warehouses, using Bins, with an improved interface over the default NetSuite Inventory Detail popup.
 
 An Expected Receipts Calendar, which shows both past and upcoming Receipts in a calendar view.
 
-A Work Orders sublist on a Sales Order, which allows you to see a list of that Order’s Work Orders, open them, and create new.
+A Work Orders sublist on a Sales Order, which allows you to see a list of that Order's Work Orders, open them, and create new.
 
 The ability to control all aspects of a Work Order, from the Type, to the number of Events and their Types, to the number of days the work will go on for. The Work Order interface utilizes the Requirements Engine for communicating the work requirements for the specific job.
 
@@ -37,7 +37,7 @@ A Work Order calendar/schedule allowing most roles to see what work is upcoming 
 
 A Scheduling interface used by the Scheduler (aka Dispatcher, aka Operations Manager). This interface is used to Approve Work Orders, to group them into Routes, to assign Labor Resources (people, subs, trucks, etc), to Complete Work Orders, and to enter time worked (when that was not done in the field), and other functions, including a Map view.
 
-A Hold List where Work Orders can be “parked” when you don’t know exactly when you will be able to get to them.
+A Hold List where Work Orders can be "parked" when you don't know exactly when you will be able to get to them.
 
 A mobile-optimized field application used to see all information about a Work Order while in the field, Complete it, send Status reports, obtain the Customer Signature, create Punch, notify the Warehouse about unexpected returning product, take photos, and more.
 
@@ -63,13 +63,13 @@ We do not have this in our account yet, but it will be migrating (with adaptatio
 
 ## **Receiving:**
 
-To replace the standard NetSuite interface for receiving POs, a suitelet was developed. It was accessed by a button added to the PO form called “Orion Receiving”. The standard NetSuite Receive button was removed/hidden. The Orion Receiving button only displayed on Special Order POs, not Drop Ship POs. When Orion Receiving was clicked, the suitelet opened in a new tab, and then the client script called an endpoint to load the PO items and list of Bins for the Warehouse the PO was shipping to. It allows for listing the items on the PO - just some basic information. It also has fields for the Bin the item should be received to, and the Qty placed in that Bin. To the right of this is a box displaying all the Bins for the Warehouse that the PO was shipped to.
+To replace the standard NetSuite interface for receiving POs, a suitelet was developed. It was accessed by a button added to the PO form called "Provia Receiving". The standard NetSuite Receive button was removed/hidden. The Provia Receiving button only displayed on Special Order POs, not Drop Ship POs. When Provia Receiving was clicked, the suitelet opened in a new tab, and then the client script called an endpoint to load the PO items and list of Bins for the Warehouse the PO was shipping to. It allows for listing the items on the PO - just some basic information. It also has fields for the Bin the item should be received to, and the Qty placed in that Bin. To the right of this is a box displaying all the Bins for the Warehouse that the PO was shipped to.
 
-The user can select items using the checkboxes, with a Select/Deselect all at the top. They can also select using Shift and Ctrl, so they don’t need to click every box. They can then drag the selected items onto a single Bin and drop them. This will fill that Bin name into the items' Bin field, and in the case of a single Bin, put the Item’s PO Qty into the Bin Qty field.
+The user can select items using the checkboxes, with a Select/Deselect all at the top. They can also select using Shift and Ctrl, so they don't need to click every box. They can then drag the selected items onto a single Bin and drop them. This will fill that Bin name into the items' Bin field, and in the case of a single Bin, put the Item's PO Qty into the Bin Qty field.
 
 The user can also do the reverse - select one or more bins and drag them to a single Item. In this case, the user needs to specify the Qty to go in each of the multiple bins. They are not allowed to receive more than the PO Qty (see OverReceipts later for how those can be handled - in presold furniture the risk of accidentally receiving too many is not worth allowing it. Flooring is a different case.)
 
-In either direction, the user can select multiple destination objects (Items, or Bins), and then drag multiple source objects on to them, creating a many to many scenario - e.g. I want the 3 selected Lines to go to the 2 selected bins. Again, in this case, they need to adjust Qtys for each bin. This makes the simple case extremely simple, while allowing for complex cases. For example, if I want to receive every one of the 500 Lines on the PO to a single Bin called “Staging”, I can simply check the top “Select All” checkbox, and then drag any item to the Staging Bin. All of the selected items will then be set to go there, in full Qty. Then click Save.
+In either direction, the user can select multiple destination objects (Items, or Bins), and then drag multiple source objects on to them, creating a many to many scenario - e.g. I want the 3 selected Lines to go to the 2 selected bins. Again, in this case, they need to adjust Qtys for each bin. This makes the simple case extremely simple, while allowing for complex cases. For example, if I want to receive every one of the 500 Lines on the PO to a single Bin called "Staging", I can simply check the top "Select All" checkbox, and then drag any item to the Staging Bin. All of the selected items will then be set to go there, in full Qty. Then click Save.
 
 A Warehouse may have many Bins, or few Bins. And Bin Names are up to the Dealer and can be long or short. For this reason, the Bins box allows the Dealer to choose how many columns the Bin names are displayed in. This can also be defaulted, per Warehouse, so they do not need to keep changing it each time. This allows them to fit more of their Bins on the screen without scrolling.
 
@@ -82,11 +82,11 @@ Existing Receipts can be removed using the X icon, and are removed on Save.
 The little Info icon allows the user to enter a Receiving Note for that item/bin/qty.
 
   
-It also allows the user to create what we called a “Component Receipt”. This is a situation which can arise with certain manufacturers (e.g. Knoll), where they do not ship the full item at the same time. A simple example is you order 4 tables, and then a truck arrives and they have parts of those 4 tables. It isn’t that they shipped 2 complete tables - that is easy to handle, as you simply receive the 2 which came, instead of the full 4. This scenario is when they send you 4 tops - but 0 bases. How many tables do you have now? You don’t have 4 complete tables. If you receive a Qty of 2 - the system thinks you have 2 complete tables, but you do not. The correct answer is 0 - you have received 0 complete tables. However, you did receive 4 tops, and want to put them into a bin or bins, and record where you put them for later, when the bases arrive. Our approach was to store this in a custom record called receiving_extra. The user could type in a brief description of what they received (e.g. “4 tops”), and still select a Bin or Bins to put them in. They could also enter what was still expected (e.g. “4 bases”), and had a date field where they could put the expected date - which we were told is sometimes communicated in this scenario.
+It also allows the user to create what we called a "Component Receipt". This is a situation which can arise with certain manufacturers (e.g. Knoll), where they do not ship the full item at the same time. A simple example is you order 4 tables, and then a truck arrives and they have parts of those 4 tables. It isn't that they shipped 2 complete tables - that is easy to handle, as you simply receive the 2 which came, instead of the full 4. This scenario is when they send you 4 tops - but 0 bases. How many tables do you have now? You don't have 4 complete tables. If you receive a Qty of 2 - the system thinks you have 2 complete tables, but you do not. The correct answer is 0 - you have received 0 complete tables. However, you did receive 4 tops, and want to put them into a bin or bins, and record where you put them for later, when the bases arrive. Our approach was to store this in a custom record called receiving_extra. The user could type in a brief description of what they received (e.g. "4 tops"), and still select a Bin or Bins to put them in. They could also enter what was still expected (e.g. "4 bases"), and had a date field where they could put the expected date - which we were told is sometimes communicated in this scenario.
 
 Finally, this is where we would also allow them to record an intentional Over-Receipt. We did NOT put any overage into the NetSuite Item Receipt - because that would change the financials on the Order. The intention here was to simply record it, and display it here for this PO, and likely have a saved search that would show them any actual over-receipts they had to deal with. They might go ahead and adjust the PO (and then sync to the SO), or they might transfer ownership of the overage to the Dealer and have it be in Stock. We did not get any further with this situation, other than letting them record it and storing it in the custom record.
 
-Finally again - there was another scenario with Walls Orders that COI brought up, one that we have not yet solved for. In this scenario, they enter a single line for all the product on a Walls Order. It has a Qty of 1 Lot. And yet in fact it consists of scores of separate items, which when received will need to be placed into multiple bins. Because the line Qty is 1, we were not letting them put it into more than 1 Bin. What will be needed to handle this will be a concept of “additional bins”, used when a single Qty item is “too big” to fit in a single Bin, and can “overflow” to additional Bins. The NetSuite Item Receipt will show that 1 was received to the primary Bin, and a custom record will store the list of additional bins it is in.
+Finally again - there was another scenario with Walls Orders that COI brought up, one that we have not yet solved for. In this scenario, they enter a single line for all the product on a Walls Order. It has a Qty of 1 Lot. And yet in fact it consists of scores of separate items, which when received will need to be placed into multiple bins. Because the line Qty is 1, we were not letting them put it into more than 1 Bin. What will be needed to handle this will be a concept of "additional bins", used when a single Qty item is "too big" to fit in a single Bin, and can "overflow" to additional Bins. The NetSuite Item Receipt will show that 1 was received to the primary Bin, and a custom record will store the list of additional bins it is in.
 
 ## Expected Receipts
 
@@ -101,37 +101,37 @@ This Suitelet displays a calendar view, defaulting to the current week. Within t
 
 The greenish tiles are fully received. The yellowish tiles are partially received. And the pinkish tiles are expected receipts.
 
-The Expected Receipt date is calculated from the historical experience of the dealer when receiving product that had an Ack Ship Date. In Orion Receiving, when items are received, we track how many days from their Ack Ship Date it took for them to get here and be received. We store this in the database by Vendor ID, Vendor Ship-from Zipcode, and Destination Zipcode (which is often a Dealer Warehouse location, but can also be a Customer Location for Direct Ship POs, or a Subcontractor location for POs shipped to a Sub.) This way a Dealer with multiple warehouses in different regions, and/or a Vendor with multiple manufacturing facilities, will store the correct value for this PO/Ack. And for items shipped to a Customer Location or Sub Location, the expected date will be pretty accurate as well.
+The Expected Receipt date is calculated from the historical experience of the dealer when receiving product that had an Ack Ship Date. In Provia Receiving, when items are received, we track how many days from their Ack Ship Date it took for them to get here and be received. We store this in the database by Vendor ID, Vendor Ship-from Zipcode, and Destination Zipcode (which is often a Dealer Warehouse location, but can also be a Customer Location for Direct Ship POs, or a Subcontractor location for POs shipped to a Sub.) This way a Dealer with multiple warehouses in different regions, and/or a Vendor with multiple manufacturing facilities, will store the correct value for this PO/Ack. And for items shipped to a Customer Location or Sub Location, the expected date will be pretty accurate as well.
 
 We store (currently 12) of the most recent receipts for that Vendor/Origin Zip/Destination Zip, and use the average of those 12 (or however many we have if fewer than 12) to calculate the average transit days, which are then added to the Ack Ship Date to form the Expected Receipt Date.
 
-If we do not have any stored transit information for the particular Vendor/Origin/Destination, we display the PO on its Ack Ship Date and instead of a date, show “TBD”. As receipts happen, this will self-correct.
+If we do not have any stored transit information for the particular Vendor/Origin/Destination, we display the PO on its Ack Ship Date and instead of a date, show "TBD". As receipts happen, this will self-correct.
 
 If vendors get better at getting product to the dealer, or (we hope not!) worse, the average transit days will start to shrink or grow with each new Receipt, and so the Expected dates will continually self-correct.
 
-When looking at previous weeks, you see any actuals, and also see any Expecteds which land on those dates and have not yet been received. But when looking at the week which includes “today”, meaning today’s actual date, it works in a special way. When looking at the week which contains “today”, every unreceived PO that was expected before the currently-viewed week will show up, and will show up on “today”.
+When looking at previous weeks, you see any actuals, and also see any Expecteds which land on those dates and have not yet been received. But when looking at the week which includes "today", meaning today's actual date, it works in a special way. When looking at the week which contains "today", every unreceived PO that was expected before the currently-viewed week will show up, and will show up on "today".
 
-In this way, POs that were expected earlier but have not yet been received will always roll forward to the current week. This helps ensure visibility is not lost – you do not need to go back in time to hunt for them – they will display this week until they are received. Another way to put is this: today is Monday, and we had a PO we expected to arrive on the previous Friday, but we have not received it. It will show on today (Monday). If not received today, then tomorrow it will appear on “today” again, which will now be Tuesday. And so forth – until it is actually received. Once received, it will then be frozen as an actual receipt on that day.
+In this way, POs that were expected earlier but have not yet been received will always roll forward to the current week. This helps ensure visibility is not lost – you do not need to go back in time to hunt for them – they will display this week until they are received. Another way to put is this: today is Monday, and we had a PO we expected to arrive on the previous Friday, but we have not received it. It will show on today (Monday). If not received today, then tomorrow it will appear on "today" again, which will now be Tuesday. And so forth – until it is actually received. Once received, it will then be frozen as an actual receipt on that day.
 
 But sometimes, things can go wrong, so we have some override capabilities. If you click the down arrow in the lower right, it opens an action menu:
 
-The first item on the menu, “**Open in Orion Receiving**”, does exactly that. There you can see the details for any actual receipts, either full or partial, and actually receive (if you have permission to create Item Receipts) unreceived/partial POs. The icon that is supposed to represent “boxes”, located to the left of the menu arrow, does the same thing -  opens the PO in Orion Receiving, but without having to open the menu.
+The first item on the menu, "**Open in Provia Receiving**", does exactly that. There you can see the details for any actual receipts, either full or partial, and actually receive (if you have permission to create Item Receipts) unreceived/partial POs. The icon that is supposed to represent "boxes", located to the left of the menu arrow, does the same thing -  opens the PO in Provia Receiving, but without having to open the menu.
 
-“**Stop Showing this PO**” – in the past in other systems we have seen bad data, and there have been POs that simply aren’t going to be received. There was a need to just stop showing them, so they don’t keep rolling forward to every new week. This should not be an issue in NetSuite, but at least for now you can select that item and that PO will no longer appear in Expected Receipts. Note that this wouldn’t mean you couldn’t receive it when the product actually arrives – you can still get to Orion Receiving from the PO, and likely from a Warehouse menu we will create. You just won’t see it here anymore, because you said to stop showing it here.
+"**Stop Showing this PO**" – in the past in other systems we have seen bad data, and there have been POs that simply aren't going to be received. There was a need to just stop showing them, so they don't keep rolling forward to every new week. This should not be an issue in NetSuite, but at least for now you can select that item and that PO will no longer appear in Expected Receipts. Note that this wouldn't mean you couldn't receive it when the product actually arrives – you can still get to Provia Receiving from the PO, and likely from a Warehouse menu we will create. You just won't see it here anymore, because you said to stop showing it here.
 
-“**Set Expected Date for this PO**” – sometimes a PO is calculated to arrive on a certain date, but you are informed of a problem by the Vendor or their Carrier – e.g. the truck broke down in Minnesota, or a mountain pass is closed. When you are informed of such a thing, you can set a hard Expected Date just for that PO, and thereafter it will only show as Expected on the date you set here. So if we have a PO with such a problem, and we are tired of seeing it show up every day when we know it isn’t coming for a couple more weeks, we can simply enter an override expected date using this menu option – and it won’t show again until then.
+"**Set Expected Date for this PO**" – sometimes a PO is calculated to arrive on a certain date, but you are informed of a problem by the Vendor or their Carrier – e.g. the truck broke down in Minnesota, or a mountain pass is closed. When you are informed of such a thing, you can set a hard Expected Date just for that PO, and thereafter it will only show as Expected on the date you set here. So if we have a PO with such a problem, and we are tired of seeing it show up every day when we know it isn't coming for a couple more weeks, we can simply enter an override expected date using this menu option – and it won't show again until then.
 
-And should we find that despite our best efforts, some Vendor’s averages are all over the map and we want the system to stop calculating for that Vendor, we can enter a hard-coded number of transit days for that Vendor. In that case, we can click “**Set this Vendor’s Transit Days**” and enter a number of days, and from that point forward POs coming from that Vendor will show as expected on the day that is calculated from the Ack Ship Date plus the number you entered here.
+And should we find that despite our best efforts, some Vendor's averages are all over the map and we want the system to stop calculating for that Vendor, we can enter a hard-coded number of transit days for that Vendor. In that case, we can click "**Set this Vendor's Transit Days**" and enter a number of days, and from that point forward POs coming from that Vendor will show as expected on the day that is calculated from the Ack Ship Date plus the number you entered here.
 
 These Overrides should not be needed often, but they are available for the occasional edge cases. It is best initially not to use them, but instead to receive POs as they arrive and let the system do the math and get better without any manual intervention.
 
 ## Work Orders
 
-Work Orders are a set of custom records and suitelets intended to bring best of class Furniture dealer operations into NetSuite Orion.
+Work Orders are a set of custom records and suitelets intended to bring best of class Furniture dealer operations into NetSuite Provia.
 
-Work Orders are always tied to a transaction, and almost always a Sales Order. One special type called a “Placeholder Work Order” can be tied to a Quote as well. There can be zero, one, or many Work Orders on any given Sales Order.
+Work Orders are always tied to a transaction, and almost always a Sales Order. One special type called a "Placeholder Work Order" can be tied to a Quote as well. There can be zero, one, or many Work Orders on any given Sales Order.
 
-The Sales Order had a sublist to display information about each Work Order tied to it. This was done with SuiteQL as the Work Order’s overall status is a rollup of all of its Events' statuses, and each Event can have multiple Days with their own status. For this reason, we added the query to the beforeload user event for a Sales Order and created the sublist on the server. We could (and probably should) instead use a client script to hit an endpoint for the data after the SO loads. The sublist also had a New Work Order button which would open the suitelet with no “woid” param, which meant it is a new one.
+The Sales Order had a sublist to display information about each Work Order tied to it. This was done with SuiteQL as the Work Order's overall status is a rollup of all of its Events' statuses, and each Event can have multiple Days with their own status. For this reason, we added the query to the beforeload user event for a Sales Order and created the sublist on the server. We could (and probably should) instead use a client script to hit an endpoint for the data after the SO loads. The sublist also had a New Work Order button which would open the suitelet with no "woid" param, which meant it is a new one.
 
 You could also open existing Work Orders from the Work Order Schedule, and from the Scheduler interface.
 
@@ -143,7 +143,7 @@ The Work Order suitelet form showed basic information about its Sales Order/Cust
 
 **Placeholder**: a checkbox, not defaulted.
 
-One of our Pilot dealers who have been using my old Connect product have “fancy notes”. These allow HTML rich text, and for the pasting of image snips, or the drag/drop of image files into the note body.
+One of our Pilot dealers who have been using my old Connect product have "fancy notes". These allow HTML rich text, and for the pasting of image snips, or the drag/drop of image files into the note body.
 
 This is very popular with that dealer (Catalyst), and so I previously incorporated it into the Work Order and Work Order Event notes. In real life, it generally does not contain a picture of my dog, but instead a variety of things that the dealer finds useful when communicating from the Order Team to Operations (which of course is what a Work Order is all about.) Often there are cnips of floor plans, for example, showing exactly where and how product should be placed.
 
@@ -164,7 +164,7 @@ A Work Order also had several Sublists:
 
 Each of these sublists except for Events then had two subtabs - one which showed the list from the Sales Order or Customer, and one which showed the list assigned to this Work Order.
 
-Take Addresses, for example. Under the Addresses tab, you would see a subtab called Customer Addresses. This showed a a list of all that Customer’s addresses. Then you had a subtab called Work Order Addresses showing where this Work Order is going. The Customer Address specified as the Install Address on the Sales Order would appear here by default. However, you could also pick **additional** Customer Addresses - as sometimes a Work Order has multiple stops.
+Take Addresses, for example. Under the Addresses tab, you would see a subtab called Customer Addresses. This showed a a list of all that Customer's addresses. Then you had a subtab called Work Order Addresses showing where this Work Order is going. The Customer Address specified as the Install Address on the Sales Order would appear here by default. However, you could also pick **additional** Customer Addresses - as sometimes a Work Order has multiple stops.
 
 Contacts, Files, and Lines worked similary - you see what is on the Order, and select which apply to this Work Order. You could also add an ad hoc Address, Contact, or File, and these would apply only to the Work Order, without writing back to the Sales Order or Customer.
 
@@ -172,7 +172,7 @@ Finally, the Events tabs displayed a list of the Events created for this Work Or
 
 Here are sample Work Order and Event Types (gleaned from a few existing dealers):
 
-So a “Standard” Work Order might contain a number of Events, such as:
+So a "Standard" Work Order might contain a number of Events, such as:
 
 - Pre-Install Walkthrough
     
@@ -193,7 +193,7 @@ Each of these Events would typically be scheduled for different dates, have diff
 
 Currently, you create new Events from the Events sublist via a popup. It lets you select the Event Type, an optional name (if none entered is just inherits the Work Order name.) You can enter an Event-specific note, and then you have Scheduling Options. These let you pick the intended date(s) for the Event. There can be as many days as you think you will need. you can add dates manually, or use a bulk add feature that lets you specify how many days to add, and has checkboxes for whether to include Saturdays, Sundays, and Holidays.
 
-Each Event can have a Time field - and this can be a specific time, but can also be things like “Anytime”, “Morning”, “Afternoon”, “Night”, “First Stop”, “Last Stop”.
+Each Event can have a Time field - and this can be a specific time, but can also be things like "Anytime", "Morning", "Afternoon", "Night", "First Stop", "Last Stop".
 
 **Work Order/Event Statuses**
 
@@ -232,11 +232,11 @@ There is a toolbar at the top of the Scheduling Interface, which consists of:
     
 - The day of the week.
     
-- The “fullness” meter for the day – the Scheduler can set this, and the Order Teams can see how full a given day is when they go to select a date for their job. Note: we can support multiple fullness meters, in case the dealer wants to have multiple fullnesses for a day e.g. a day might be fairly open for Furniture, but very full for Walls, or Service or Moves, etc. By default there is only one.
+- The "fullness" meter for the day – the Scheduler can set this, and the Order Teams can see how full a given day is when they go to select a date for their job. Note: we can support multiple fullness meters, in case the dealer wants to have multiple fullnesses for a day e.g. a day might be fairly open for Furniture, but very full for Walls, or Service or Moves, etc. By default there is only one.
     
 - A Location filter – This will contain all Warehouse/Operations Locations that the logged-in Scheduler has access to. If more than one, they can filter per location. They can also see all.
     
-- A Customer filter – this allows them to filter and see only the selected Customer’s jobs on screen temporarily.
+- A Customer filter – this allows them to filter and see only the selected Customer's jobs on screen temporarily.
     
 - A Salesperson filter – works the same way as Customer.
     
@@ -259,19 +259,19 @@ The Work Order Map View is accessed from within Work Order Management by clickin
 
 It opens a new window that then displays a map of the Events on that day:
 
-Each Event displays on the map as a “job site” marker with a building icon:
+Each Event displays on the map as a "job site" marker with a building icon:
 
-While the Warehouse Location that was selected in Work Order Management displays a “warehouse” marker:
+While the Warehouse Location that was selected in Work Order Management displays a "warehouse" marker:
 
 The panel in the top left shows the date, the number of Work Order Groups, and the number of Work Order Events:
 
 It also has 3 buttons:
 
-- “View Map in Normal Mode” (default)
+- "View Map in Normal Mode" (default)
     
-- “View Map in Real-time Mode” (only available when you are looking at “today” – and is dependent on the Installers’ tablets sharing their location.
+- "View Map in Real-time Mode" (only available when you are looking at "today" – and is dependent on the Installers' tablets sharing their location.
     
-- “Collapse or Expand All”
+- "Collapse or Expand All"
     
 
 Below this is a panel showing all the Work Order Groups and Events for the day. Each group is randomly assigned a color (with the Ungrouped Events lumped together and always Gray):
@@ -307,11 +307,11 @@ This view also shows the directions, and distance of each leg, along with a time
 
 Clicking the same Group header again will hide its route, as will clicking a different one.
 
-In the Ungrouped Events, this works a little differently. Since they are not grouped, you click the Event’s header, not “Ungrouped Events”. Doing that will show the route to the ungrouped event and back:
+In the Ungrouped Events, this works a little differently. Since they are not grouped, you click the Event's header, not "Ungrouped Events". Doing that will show the route to the ungrouped event and back:
 
 **Approving a Work Order Event**
 
-When Work Order Events are created, regardless of who creates them, they appear in the Scheduling interface on the date for which they were created. They appear in the right pane, aka the “Unapproved” pane.
+When Work Order Events are created, regardless of who creates them, they appear in the Scheduling interface on the date for which they were created. They appear in the right pane, aka the "Unapproved" pane.
 
 They display information about the Order/Work Order in a compact format:
 
@@ -319,21 +319,21 @@ The information included is:
 
 Sales Order number – Work Order Event number. Both are links to open the object in a new tab in case the Scheduler wants to see the details.
 
-Order Team icon – this can be a custom image derived from the Dealer’s logo, for example in the MK sandbox we are borrowing Catalyst’s. Clicking this will show the Order’s Team – in case the Scheduler wants to contact one of them without having to open the whole Sales Order.
+Order Team icon – this can be a custom image derived from the Dealer's logo, for example in the MK sandbox we are borrowing Catalyst's. Clicking this will show the Order's Team – in case the Scheduler wants to contact one of them without having to open the whole Sales Order.
 
-Collapse arrow  when clicked, this will collapse the Event into a smaller, less detailed format. There is a corresponding Collapse All button at the top of the Scheduling interface.
+Collapse arrow  when clicked, this will collapse the Event into a smaller, less detailed format. There is a corresponding Collapse All button at the top of the Scheduling interface.
 
-When a Scheduler drags them to the left pane (aka the “Approved” pane), their status changes from Needs Approval to Approved. The Scheduler can leave them in the Unapproved Pane until deciding when to do them. The Scheduler has the permission to simply reschedule them for a different date. The Scheduler can also send them back to the originator and request that person to reschedule them for a different date. If she does this, the Event changes to “Reschedule Requested” status, and the originator is notified. The Scheduler can optionally include a short note with the request, perhaps to explain why the original date does not work, or to provide coaching on a date range that would be more acceptable.
+When a Scheduler drags them to the left pane (aka the "Approved" pane), their status changes from Needs Approval to Approved. The Scheduler can leave them in the Unapproved Pane until deciding when to do them. The Scheduler has the permission to simply reschedule them for a different date. The Scheduler can also send them back to the originator and request that person to reschedule them for a different date. If she does this, the Event changes to "Reschedule Requested" status, and the originator is notified. The Scheduler can optionally include a short note with the request, perhaps to explain why the original date does not work, or to provide coaching on a date range that would be more acceptable.
 
 **Locking Events**
 
-Locking happens automatically when resources are assigned to an Event. When an Event’s status changes to “Locked”, non-Schedulers can no longer make modifications to it. If modifications are needed after that point, the Scheduler must be asked to Unlock the Event. This prevents people from changing an Event’s scope or product list or address after the Scheduler has already processed it and assigned resources, without the Scheduler’s knowledge.
+Locking happens automatically when resources are assigned to an Event. When an Event's status changes to "Locked", non-Schedulers can no longer make modifications to it. If modifications are needed after that point, the Scheduler must be asked to Unlock the Event. This prevents people from changing an Event's scope or product list or address after the Scheduler has already processed it and assigned resources, without the Scheduler's knowledge.
 
 The Scheduler can also manually Lock or Unlock an Event at any time.
 
 **Grouping Events**
 
-In the Scheduler interface, Groups can be created. They are free-form and can be named anything – a calendar direction/destination like “South” or “Bainbridge Island”, after the Lead (e.g. “Carlos”), after a Project or Customer (e.g. “T-Mobile Mac”), etc. The group header block appears at the top of the Approved pane. Events can then be dragged into the group, from either pane. Within a Group, Events can be dragged up or down to change the stop number order. Groups can be created ad-hoc for the current date, or dragged over from a Groups Library on the left, which contains Groups that are used often, so that they don’t need to be created over and over on specific dates. Within the Group Library, the Scheduler can auto-create a Library Group on future days. Some Groups are used almost every day, e.g. one called “Service”. Putting those on all future days for the next Quarter or so means they won’t need to be added for every day as the Scheduler gets to it. However, they can be removed from a day, if for example the Service Tech is on vacation one week and no Service Events will be scheduled then.
+In the Scheduler interface, Groups can be created. They are free-form and can be named anything – a calendar direction/destination like "South" or "Bainbridge Island", after the Lead (e.g. "Carlos"), after a Project or Customer (e.g. "T-Mobile Mac"), etc. The group header block appears at the top of the Approved pane. Events can then be dragged into the group, from either pane. Within a Group, Events can be dragged up or down to change the stop number order. Groups can be created ad-hoc for the current date, or dragged over from a Groups Library on the left, which contains Groups that are used often, so that they don't need to be created over and over on specific dates. Within the Group Library, the Scheduler can auto-create a Library Group on future days. Some Groups are used almost every day, e.g. one called "Service". Putting those on all future days for the next Quarter or so means they won't need to be added for every day as the Scheduler gets to it. However, they can be removed from a day, if for example the Service Tech is on vacation one week and no Service Events will be scheduled then.
 
 **Assigning resources to Events/Groups**
 
@@ -343,7 +343,7 @@ This is also how you can designate one or more people resources as the Lead.
 
 Resources in the Resource Pane also have an Actions menu. This allows the Scheduler to indicate that the Resource called off that day, or to enter scheduled time off in the future. They then become unavailable for those days. You can also make non-people resources unavailable – for example when a truck is scheduled to be in the Shop for some days, or an iPad is at the Apple store being fixed.
 
-Resources also support Customer Restrictions and Customer Preferences. This is for those situations which unfortunately arise where a Customer has asked you not to send a particular resource to their jobs. The flip side of this is a new thing, to allow indicating that a particular resource is preferred by the Customer. Knowing that allows the Scheduler to assign the Customer’s preferred resource(s) to their jobs, if feasible.
+Resources also support Customer Restrictions and Customer Preferences. This is for those situations which unfortunately arise where a Customer has asked you not to send a particular resource to their jobs. The flip side of this is a new thing, to allow indicating that a particular resource is preferred by the Customer. Knowing that allows the Scheduler to assign the Customer's preferred resource(s) to their jobs, if feasible.
 
 **Completing a Work Order Event**
 
@@ -353,13 +353,13 @@ We do not have screen grabs of Completing a Work Order Event at this time, but w
 
 ## **Field interface (not necessarily an actual NetSuite user)**
 
-The Field interface is a Suitelet which does not require a login, and uses a Restlet to retrieve and submit data to the dealer’s NetSuite instance. This allows the installers (and perhaps service providers) using the field interface to not be actual Netsuite users with a login.
+The Field interface is a Suitelet which does not require a login, and uses a Restlet to retrieve and submit data to the dealer's NetSuite instance. This allows the installers (and perhaps service providers) using the field interface to not be actual Netsuite users with a login.
 
 We do not have screen grabs of it currently - it was done late in the former project and not documented, so as not to share it with you know who.
 
 **Viewing assigned Work Order Events for a given day**
 
-When the Orion icon is tapped on the device, it will load a list of the Events that device is assigned to for the current day. The date can be changed to provide a view of past or future days. The Events are listed in Stop Number order. Tapping an Event will load all of its data, including:
+When the Provia icon is tapped on the device, it will load a list of the Events that device is assigned to for the current day. The date can be changed to provide a view of past or future days. The Events are listed in Stop Number order. Tapping an Event will load all of its data, including:
 
 - Basic information about the Work Order, Event, Sales Order, Customer Location(s) and Contact(s).
     
@@ -384,13 +384,13 @@ There is a button to send a Status Update. This does not complete the Event, but
 
 There is a button to Complete the Work Order Event. This typically will also send a Status Update as well. If Event Lines are used, this button will only be available if all the Event Lines have been completed. If Event Lines are not used, this button will be available only if all the Work Order Lines are completed.
 
-We plan to add a new capability here for working offline, because sometimes a customer site does not allow connectivity, or simply has a very week signal. Offline mode will let you download the Event information when you DO have signal, in advance, and work with the information while offline. When connectivity has been restored, you can upload the information you have entered, including any completion or status updates. We will just use the browser’s offline mode capabilities with local storage to accomplish this.
+We plan to add a new capability here for working offline, because sometimes a customer site does not allow connectivity, or simply has a very week signal. Offline mode will let you download the Event information when you DO have signal, in advance, and work with the information while offline. When connectivity has been restored, you can upload the information you have entered, including any completion or status updates. We will just use the browser's offline mode capabilities with local storage to accomplish this.
 
 **Entering Time Worked**
 
 Above the roster, there is a section where you can enter a start time and end time, and optionally time off (e.g. lunch). When you do this, it will calculate the time worked, and divide it into Regular, Overtime, and Double Time based on the dealer-specific settings in force for Reg/OT/DT. Alternatively, you can simply enter the time worked in each of those buckets.
 
-You can then “fill down” the values entered or calculated at the top into each person listed on the roster.
+You can then "fill down" the values entered or calculated at the top into each person listed on the roster.
 
 You can then make individual adjustments for specific people as needed. This typically includes filling in the name of each external person who showed up to the job when assigned as Supplemental Labor from a Service Provider.
 
@@ -400,13 +400,13 @@ You must also select the Work Type performed – in some other systems this was 
 
 **Adjusting the Roster**
 
-If a person who was assigned does not show up, you can remove them from the Event. You can enter a note explaining why you did so, e.g. “ran out of gas on the way in”. No time will be recorded for such a person.
+If a person who was assigned does not show up, you can remove them from the Event. You can enter a note explaining why you did so, e.g. "ran out of gas on the way in". No time will be recorded for such a person.
 
 If others who were not originally scheduled do show up, you can add them to the Event. There is a dropdown of defined resources you can select from.
 
 **Photos**
 
-The Lead can take photos of their work or anything else relevant to the job. These are general photos, and are outside and separate from specific photos tied to Punch Items. There is a Standard Work Requirement called “Work Order Photos” which allows the Order Team to indicate they want those on a particular job. These can then be used by Marketing or for other purposes.
+The Lead can take photos of their work or anything else relevant to the job. These are general photos, and are outside and separate from specific photos tied to Punch Items. There is a Standard Work Requirement called "Work Order Photos" which allows the Order Team to indicate they want those on a particular job. These can then be used by Marketing or for other purposes.
 
 **Signatures**
 
@@ -436,7 +436,7 @@ This is defined as product being brought to the Warehouse that was NOT part of t
 
 When creating a Work Order, you can click the Placeholder checkbox:
 
-When this box is checked, there are fewer required things in order to Save. You don’t need to:
+When this box is checked, there are fewer required things in order to Save. You don't need to:
 
 - Add a Work Order Note
     
@@ -451,9 +451,9 @@ When this box is checked, there are fewer required things in order to Save. You 
 - For Event Days, specify a specific time when Specific Time is selected in the Schedule Type
     
 
-You still need to supply a name for the Work Order, and have one Event with one date. And you can fill in more details if you have them, you simply don’t have to because it’s a Placeholder.
+You still need to supply a name for the Work Order, and have one Event with one date. And you can fill in more details if you have them, you simply don't have to because it's a Placeholder.
 
-When the Placeholder box is unchecked at some point when you want it to become a “real” Work Order, then the data that wasn’t required as a Placeholder becomes required, in order to Save.
+When the Placeholder box is unchecked at some point when you want it to become a "real" Work Order, then the data that wasn't required as a Placeholder becomes required, in order to Save.
 
 Placeholder Work Orders appear differently, in the Work Order Schedule
 
@@ -467,9 +467,9 @@ First, we go to **Work Order Management**, as that is the place where we can rem
 
 You can move individual Events to the Hold List, or entire Groups of Events.
 
-For an individual Event, you click the “down arrow” action menu on the Event:
+For an individual Event, you click the "down arrow" action menu on the Event:
 
-And then click “Move to Hold List”
+And then click "Move to Hold List"
 
 You are then given these options:
 
@@ -479,7 +479,7 @@ Or you can choose to put the Event into an existing Hold List Group (if you choo
 
 Or you can enter the name of a new group to create in the Hold List, and your Event will be put into that group after it is created.
 
-You can also choose to retain any assigned resources – if you don’t check that checkbox, they will be removed, and when the Event comes off the Hold List you will need to assign resources again. This often makes sense when you don’t know how long the Event will be in the Hold List – as the original resources may not be available when it comes back off.
+You can also choose to retain any assigned resources – if you don't check that checkbox, they will be removed, and when the Event comes off the Hold List you will need to assign resources again. This often makes sense when you don't know how long the Event will be in the Hold List – as the original resources may not be available when it comes back off.
 
 You can also retain any Scheduler Sticky Notes if you want.
 
@@ -549,17 +549,17 @@ If you arrange the Events by their Work Order Group, the section headers have so
 
 These Work Order Group controls are covered later.
 
- Next are the table columns:
+  Next are the table columns:
 
 All columns are sortable. When you have the results Arranged into sections, they sort within each section.
 
- **Cancelling Events on the Hold List:**
+  **Cancelling Events on the Hold List:**
 
-Within each Event’s WO # column, there is an X icon – this is used to Cancel the Event. It asks if you are sure. All Days on that Event will be cancelled, unless they are Completed or Partially Completed. If this Event is the only Event on the Work Order, the Work Order itself will be cancelled as well.
+Within each Event's WO # column, there is an X icon – this is used to Cancel the Event. It asks if you are sure. All Days on that Event will be cancelled, unless they are Completed or Partially Completed. If this Event is the only Event on the Work Order, the Work Order itself will be cancelled as well.
 
- **Grouping Events on the Hold List:**
+  **Grouping Events on the Hold List:**
 
-Within each Event’s WO Group column, there are some buttons. If the Event is NOT currently in a Hold List Work Order Group, there is a plus sign button to add it to one:
+Within each Event's WO Group column, there are some buttons. If the Event is NOT currently in a Hold List Work Order Group, there is a plus sign button to add it to one:
 
 Clicking the plus sign displays a dropdown of the Hold List Groups:
 
@@ -587,19 +587,19 @@ To remove a Sticky completely from the Event, you just clear its text.
 
 **Hold List Group management**
 
-You can add, change, or remove a given Event’s group membership in any view, but to manage the Hold List Groups themselves, you need to Arrange by WO Group:
+You can add, change, or remove a given Event's group membership in any view, but to manage the Hold List Groups themselves, you need to Arrange by WO Group:
 
-When arranged by WO Group, you have additional buttons in each Group’s header to manage the Groups themselves.
+When arranged by WO Group, you have additional buttons in each Group's header to manage the Groups themselves.
 
 **New Hold List Group**
 
-You can add a new Hold List Group by clicking the green plus sign button. This will insert a new group above the group whose “new” button you clicked.
+You can add a new Hold List Group by clicking the green plus sign button. This will insert a new group above the group whose "new" button you clicked.
 
 You can then type to enter the actual name you want for the Group. There will not be any Events in it initially, of course.
 
 **Delete a Hold List Group**
 
-The X button on the group header will remove that Hold List Group. Any Events currently in that group will be moved to the “Ungrouped Events” section.
+The X button on the group header will remove that Hold List Group. Any Events currently in that group will be moved to the "Ungrouped Events" section.
 
 **Change the display order of the Hold List Groups**
 
@@ -617,9 +617,9 @@ Click to select a single Event. It will turn yellow:
 
 Clicking a different Event will de-select the first and select the new one. However, you can select multiple Event rows by using the **Ctrl/Command** key as you click. You can also use the **Shift** key to select a whole block of them. The Ctrl and Shift keys work just like they would with files in a folder.
 
-You can also Arrange by any of the available options, and within the section’s header, click the select button on the left. This will select all the Events in that section, and the button itself will turn yellow to indicate that all of its events are selected. Clicking the selection button again will de-select them all:
+You can also Arrange by any of the available options, and within the section's header, click the select button on the left. This will select all the Events in that section, and the button itself will turn yellow to indicate that all of its events are selected. Clicking the selection button again will de-select them all:
 
-When you have one or more Events selected, you can Reschedule them off the Hold List and back to being “normal” Work Orders – which once again have date(s).
+When you have one or more Events selected, you can Reschedule them off the Hold List and back to being "normal" Work Orders – which once again have date(s).
 
 To do that, you click the Reschedule button in the top toolbar (this button is enabled only when one or more Events are selected):
 
@@ -629,9 +629,9 @@ All the Events you had selected will appear in a list. The list shows some of th
 
 **The first thing to do is select a new Date for the Event(s) – this is required:**
 
-Once you have a new date, you can also select the Schedule Type and/or Specific Time – these are optional, if you don’t enter anything they will retain their original values. If the dropdown is set to Specific Time, the Time field becomes required, otherwise it is disabled.
+Once you have a new date, you can also select the Schedule Type and/or Specific Time – these are optional, if you don't enter anything they will retain their original values. If the dropdown is set to Specific Time, the Time field becomes required, otherwise it is disabled.
 
-If any of your selected Events have multiple days, they will be scheduled for after the date you pick, using the same day difference they had before. You can override this by clicking to avoid Saturdays/Sundays/Holidays. These options only appear if the Event has multiple days.  (NOTE: Holidays are yet to be implemented)
+If any of your selected Events have multiple days, they will be scheduled for after the date you pick, using the same day difference they had before. You can override this by clicking to avoid Saturdays/Sundays/Holidays. These options only appear if the Event has multiple days.  (NOTE: Holidays are yet to be implemented)
 
 You also have options about whether to put the rescheduled Events in Groups.
 
@@ -647,7 +647,7 @@ If you choose this option, you must enter a name for the new Group to be created
 
 Finally, you can also select if you want to have the Events be Unapproved, Approved, or Locked status, as well as which pane of Work Order Management they should land on.
 
-When you have entered your date, and selected the other options to your liking or as required, you simply click the “Schedule” button:
+When you have entered your date, and selected the other options to your liking or as required, you simply click the "Schedule" button:
 
 The selected Event(s) will be removed from Hold List status, and will now appear on the Schedule and in Work Order Management on the date(s) selected.
 
@@ -655,17 +655,17 @@ The selected Event(s) will be removed from Hold List status, and will now appear
 
 **Receiving and constituted lines.**
 
-Before, all SO and PO lines were of course just normal transaction lines in Netsuite. I think moving the Receiving into Orion is a good opportunity to discuss if and when we plan to constitute them. From conversations, the idea has been expressed as “when all the Acks are in”. But that is unfortunately not a single point in time. There will be POs cut early, which will be acknowledged and received sometimes far before other POs are even generated, let alone acked or received. And in many cases, there will be unacked lines on POs - some Vendors simply do not acknowledge, and dealers are not perfect at adding their own.
+Before, all SO and PO lines were of course just normal transaction lines in Netsuite. I think moving the Receiving into Provia is a good opportunity to discuss if and when we plan to constitute them. From conversations, the idea has been expressed as "when all the Acks are in". But that is unfortunately not a single point in time. There will be POs cut early, which will be acknowledged and received sometimes far before other POs are even generated, let alone acked or received. And in many cases, there will be unacked lines on POs - some Vendors simply do not acknowledge, and dealers are not perfect at adding their own.
 
-We could use at attempt to receive a PO as the time when we constitute its lines - and would not need to constitute ALL of the SO’s lines at that time, only the lines on this PO. We would need some way to know that this has been done vs it needs to be done. We could just query the transaction lines and get a pretty quick answer. However, if we first have to create possibly hundreds of lines when the user saves their receipt info, and then immediately also create Item Receipts, it seems that would be very slow.
+We could use at attempt to receive a PO as the time when we constitute its lines - and would not need to constitute ALL of the SO's lines at that time, only the lines on this PO. We would need some way to know that this has been done vs it needs to be done. We could just query the transaction lines and get a pretty quick answer. However, if we first have to create possibly hundreds of lines when the user saves their receipt info, and then immediately also create Item Receipts, it seems that would be very slow.
 
 As noted earlier, we are already having to store some of the information around receiving in a separate record. What if we stored receipt information the same way? In our own record(s), with bin info. Or maybe even in JSON? Maybe even in our line item JSON - adding fields for received Qty, and an array of bin/qtys to a Bin field? Then in theory it would be fast and easy retrieve and display receiving information anywhere. And when they save a receipt, we could return and display the results from our record - but also initiate an asynchronous call to an endpoint to create the item receipts.
 
-I’m not sure which way would be best - but it is something to discuss!
+I'm not sure which way would be best - but it is something to discuss!
 
-**“Fancy Notes”** - this should be part of a larger discussion about Notes & Files, and if we want our architecture to centralize and componentize these for use all over the place.
+**"Fancy Notes"** - this should be part of a larger discussion about Notes & Files, and if we want our architecture to centralize and componentize these for use all over the place.
 
-Previously I’ve done this with a free library that’s been around forever, called TinyMCE. However - the most recent cloud version wants money after a certain number of uses. We could attempt to use the older version, which was totally free but consisted of a bunch of nested files and folders with code and assets. If we put all of them into the File Cabinet, it should work with relative paths.
+Previously I've done this with a free library that's been around forever, called TinyMCE. However - the most recent cloud version wants money after a certain number of uses. We could attempt to use the older version, which was totally free but consisted of a bunch of nested files and folders with code and assets. If we put all of them into the File Cabinet, it should work with relative paths.
 
 But - we may want to use another tool, and maybe we have one already that we prefer. Besides basic formatting, font sizes, and colors, that ability to paste a snip or drag an image is the key functionality we want.
 

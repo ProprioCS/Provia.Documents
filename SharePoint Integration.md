@@ -18,7 +18,7 @@
 
 ## Overview
 
-The Orion SharePoint Sync is designed to streamline file management and enhance collaboration for contract furniture dealers. This solution bridges the gap between NetSuite and SharePoint, ensuring that critical documents are automatically synced and easily accessible within the appropriate NetSuite records. By integrating these systems, we improve efficiency in locating customer contracts, order-related files, and other essential documents. This integration maintains open communication channels across business units, allowing team members to work in their preferred platforms while keeping all information centralized and up-to-date.
+The Provia SharePoint Sync is designed to streamline file management and enhance collaboration for contract furniture dealers. This solution bridges the gap between NetSuite and SharePoint, ensuring that critical documents are automatically synced and easily accessible within the appropriate NetSuite records. By integrating these systems, we improve efficiency in locating customer contracts, order-related files, and other essential documents. This integration maintains open communication channels across business units, allowing team members to work in their preferred platforms while keeping all information centralized and up-to-date.
 
 ## Solution Type
 
@@ -42,11 +42,11 @@ Module - extensive functionality including external integration
 
 ## Design
 
-The Orion SharePoint Sync module will feature a tab in the NetSuite interface that exposes the folder structure of SharePoint. Users will be able to interact with files directly inside of SharePoint as well. The design ensures that users can navigate downstream in the file structure (into subfolders) but cannot navigate upstream (to parent folders).
+The Provia SharePoint Sync module will feature a tab in the NetSuite interface that exposes the folder structure of SharePoint. Users will be able to interact with files directly inside of SharePoint as well. The design ensures that users can navigate downstream in the file structure (into subfolders) but cannot navigate upstream (to parent folders).
 
 ## Roles and Permissions
 
-All Orion user roles will have access to the SharePoint integration. Permissions will be based on existing SharePoint document-level permissions, not on NetSuite roles.
+All Provia user roles will have access to the SharePoint integration. Permissions will be based on existing SharePoint document-level permissions, not on NetSuite roles.
 
 ## Features and Functionality
 
@@ -69,7 +69,7 @@ The primary technical consideration is to ensure that the integration does not v
 
 ## Test Script Title
 
-Orion SharePoint Sync Test Script
+Provia SharePoint Sync Test Script
 
 ## Test Objectives
 

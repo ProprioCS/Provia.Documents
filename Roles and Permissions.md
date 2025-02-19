@@ -15,7 +15,7 @@
 
 ## Overview
 
-The Roles and Permissions component of Orion is designed to streamline and standardize user access management across the MillerKnoll Dealer network within NetSuite. By implementing a set of pre-defined user roles, each with specific permissions tailored to their job responsibilities, this solution ensures that users have access to the necessary functionality and data while maintaining appropriate security and control.
+The Roles and Permissions component of Provia is designed to streamline and standardize user access management across the MillerKnoll Dealer network within NetSuite. By implementing a set of pre-defined user roles, each with specific permissions tailored to their job responsibilities, this solution ensures that users have access to the necessary functionality and data while maintaining appropriate security and control.
 
 The main purpose of this component is to provide a default set of roles that can be configured during a dealer implementation if needed.
 
@@ -96,7 +96,7 @@ The Roles and Permissions component will leverage NetSuite's native user role an
     
 10. Scheduler – Requests, Work Orders, Receiving, Time Entry
     
-    (2 roles from the original 25) _**Lead Installer AND Installer - Access thru Joe’s apps only and not a Netsuite role???_
+    (2 roles from the original 25) _**Lead Installer AND Installer - Access thru Joe's apps only and not a Netsuite role???_
     
     **Only for dealers who require these functions - more standardized NetSuite roles**
     
@@ -229,11 +229,11 @@ Technical Considerations:
         
     - Ensure the security and integrity of sensitive data based on role-based access control
         
-    - Verify the seamless integration of Orion SuiteApps with the role-based functionality
+    - Verify the seamless integration of Provia SuiteApps with the role-based functionality
         
 2. Test Environment:
     
-    - NetSuite Sandbox account with Orion SuiteApps installed
+    - NetSuite Sandbox account with Provia SuiteApps installed
         
     - Test data representing various user roles, permissions, and organizational scenarios
         
@@ -265,7 +265,7 @@ Technical Considerations:
         
     - Dashboards and reports display accurate and relevant data based on user roles
         
-    - Orion SuiteApps integrate seamlessly with the role-based access control system
+    - Provia SuiteApps integrate seamlessly with the role-based access control system
         
     - Performance and scalability meet the expected standards for concurrent users and data volume
         

@@ -16,13 +16,13 @@
 
 ## Overview
 
-The smart table element is an advanced component designed to revolutionize data management within the Orion suite for contract furniture dealers. Developed as a separate interface on top of NetSuite, it utilizes generic items and JSON to ensure optimal performance, with finalized data written back to NetSuite.
+The smart table element is an advanced component designed to revolutionize data management within the Provia suite for contract furniture dealers. Developed as a separate interface on top of NetSuite, it utilizes generic items and JSON to ensure optimal performance, with finalized data written back to NetSuite.
 
 Key features include a right-hand flyout panel for editing row fields, intuitive data sorting, filtering, and column management, flexible row selection and manipulation, advanced cell editing, grouping and subtotaling, customizable views, and seamless NetSuite integration.
 
-The smart table element serves as a foundation for other Orion modules, enabling consistent data management experiences. It integrates with the BOM import tool, allowing users to import items from existing design software, streamlining data population and ensuring accuracy.
+The smart table element serves as a foundation for other Provia modules, enabling consistent data management experiences. It integrates with the BOM import tool, allowing users to import items from existing design software, streamlining data population and ensuring accuracy.
 
-Benefits include enhanced data management capabilities, streamlined workflows, faster decision-making, and improved bottom line. The smart table element's robust structure facilitates integration and interoperability among Orion modules, providing a cohesive user experience.
+Benefits include enhanced data management capabilities, streamlined workflows, faster decision-making, and improved bottom line. The smart table element's robust structure facilitates integration and interoperability among Provia modules, providing a cohesive user experience.
 
 ## Solution Type
 
@@ -30,33 +30,33 @@ Benefits include enhanced data management capabilities, streamlined workflows, f
 
 ## User Stories
 
-1. As a project manager, I want to use the Orion Smart Table to easily manage and update project data, including item quantities, prices, and descriptions, so that I can keep project information accurate and up-to-date, ensuring smooth project execution and client satisfaction.
+1. As a project manager, I want to use the Provia Smart Table to easily manage and update project data, including item quantities, prices, and descriptions, so that I can keep project information accurate and up-to-date, ensuring smooth project execution and client satisfaction.
     
-2. As a designer, I want to import my design data from existing software into the Orion Smart Table using the BOM import tool, so that I can seamlessly populate the table with relevant information, reduce manual data entry, and maintain consistency between my design files and the Orion system.
+2. As a designer, I want to import my design data from existing software into the Provia Smart Table using the BOM import tool, so that I can seamlessly populate the table with relevant information, reduce manual data entry, and maintain consistency between my design files and the Provia system.
     
-3. As a sales representative, I want to leverage the Orion Smart Table's advanced filtering, sorting, and grouping capabilities to quickly identify and analyze key sales data, such as top-selling items, regional trends, and customer preferences, so that I can make data-driven decisions, target my sales efforts effectively, and ultimately increase revenue for the dealership.
+3. As a sales representative, I want to leverage the Provia Smart Table's advanced filtering, sorting, and grouping capabilities to quickly identify and analyze key sales data, such as top-selling items, regional trends, and customer preferences, so that I can make data-driven decisions, target my sales efforts effectively, and ultimately increase revenue for the dealership.
     
 
 ## Success Metrics
 
 1. Time Savings: Achieve a significant reduction in time spent on data management and analysis tasks, such as data entry, updating, and reporting, compared to the current processes.
     
-2. Data Accuracy and Consistency: Maintain a high level of data accuracy, ensuring that the information within the Orion Smart Table is reliable, consistent, and free from errors.
+2. Data Accuracy and Consistency: Maintain a high level of data accuracy, ensuring that the information within the Provia Smart Table is reliable, consistent, and free from errors.
     
 3. Project Management Efficiency: Increase the efficiency of project management and execution, measured by factors such as faster project setup, easier tracking of project progress, and reduced communication gaps.
     
-4. Sales Performance: Demonstrate a measurable improvement in sales performance, such as an increase in revenue or the number of successful deals closed, attributed to the insights and efficiencies gained through the Orion Smart Table.
+4. Sales Performance: Demonstrate a measurable improvement in sales performance, such as an increase in revenue or the number of successful deals closed, attributed to the insights and efficiencies gained through the Provia Smart Table.
     
-5. Ease of Use: Achieve a high user satisfaction rate when surveyed about the ease of use and intuitiveness of the Orion Smart Table interface, including data entry, navigation, and overall user experience.
+5. Ease of Use: Achieve a high user satisfaction rate when surveyed about the ease of use and intuitiveness of the Provia Smart Table interface, including data entry, navigation, and overall user experience.
     
-6. Availability of Necessary Functions: Ensure that all identified critical functions, such as data import, sorting, filtering, grouping, and editing, are fully implemented and operational within the Orion Smart Table module.
+6. Availability of Necessary Functions: Ensure that all identified critical functions, such as data import, sorting, filtering, grouping, and editing, are fully implemented and operational within the Provia Smart Table module.
     
-7. User Satisfaction: Maintain a high average user satisfaction score based on periodic surveys measuring overall satisfaction, perceived value, and likelihood to recommend the Orion Smart Table to colleagues and industry peers.
+7. User Satisfaction: Maintain a high average user satisfaction score based on periodic surveys measuring overall satisfaction, perceived value, and likelihood to recommend the Provia Smart Table to colleagues and industry peers.
     
 
 ## Design
 
-The Orion Smart Table will follow a user-centered design approach, focusing on creating an intuitive, efficient, and visually appealing interface for contract furniture dealers. The key design principles and considerations for the module include:
+The Provia Smart Table will follow a user-centered design approach, focusing on creating an intuitive, efficient, and visually appealing interface for contract furniture dealers. The key design principles and considerations for the module include:
 
 1. Layout and Navigation:
     
@@ -68,7 +68,7 @@ The Orion Smart Table will follow a user-centered design approach, focusing on c
         
 2. Visual Design and Branding:
     
-    - Clean, modern, and professional visual design that aligns with the Orion suite's branding guidelines
+    - Clean, modern, and professional visual design that aligns with the Provia suite's branding guidelines
         
     - Consistent use of color, typography, and iconography to create a cohesive look and feel
         
@@ -90,28 +90,28 @@ The Orion Smart Table will follow a user-centered design approach, focusing on c
         
     - Sufficient color contrast and clear visual cues for interactive elements
         
-5. Consistency with Orion Suite:
+5. Consistency with Provia Suite:
     
-    - Consistent use of UI patterns, components, and interactions across the Orion suite
+    - Consistent use of UI patterns, components, and interactions across the Provia suite
         
     - Seamless integration with other modules to provide a unified and familiar user experience
         
-    - Adherence to Orion's design system and style guide to maintain visual and functional consistency
+    - Adherence to Provia's design system and style guide to maintain visual and functional consistency
         
 
 Supporting Documents:
 
 1. Figma Mockup: [https://www.figma.com/file/iQhEi7d7Q7ooMYwPC0HfdT/Smart-Table?type=design&node-id=0%3A1&mode=design&t=yLQZCSfsa4zRtFWl-1](https://www.figma.com/file/iQhEi7d7Q7ooMYwPC0HfdT/Smart-Table?type=design&node-id=0%3A1&mode=design&t=yLQZCSfsa4zRtFWl-1)
     
-    - This mockup provides a visual representation of the Orion Smart Table's user interface and key features.
+    - This mockup provides a visual representation of the Provia Smart Table's user interface and key features.
         
 2. Design Document: [https://suitecentric-my.sharepoint.com/:w:/g/personal/marcus_dallacqua_suitecentric_onmicrosoft_com/EYWgAeqsRqFKoo9mDMk34XgB6J-ldujws3ogmLCrbQEAXQ?e=ZvJaho](https://suitecentric-my.sharepoint.com/:w:/g/personal/marcus_dallacqua_suitecentric_onmicrosoft_com/EYWgAeqsRqFKoo9mDMk34XgB6J-ldujws3ogmLCrbQEAXQ?e=ZvJaho)
     
-    - This document outlines the detailed design specifications, user flows, and interaction patterns for the Orion Smart Table.
+    - This document outlines the detailed design specifications, user flows, and interaction patterns for the Provia Smart Table.
         
 3. Jira Project: [https://suitecentric.atlassian.net/jira/software/c/projects/C000046276/boards/200](https://suitecentric.atlassian.net/jira/software/c/projects/C000046276/boards/200)
     
-    - The Jira project will be used to manage the development and implementation of the Orion Smart Table, track issues, and facilitate collaboration among team members.
+    - The Jira project will be used to manage the development and implementation of the Provia Smart Table, track issues, and facilitate collaboration among team members.
         
 
 ## Features and Functionality
@@ -338,7 +338,7 @@ Supporting Documents:
 
 1. Front-end Framework
     
-    - The Orion Smart Table will be built using a modern JavaScript framework such as React, Angular, or Vue.js
+    - The Provia Smart Table will be built using a modern JavaScript framework such as React, Angular, or Vue.js
         
     - The chosen framework should provide a robust set of tools and libraries for building interactive and responsive user interfaces
         
@@ -346,7 +346,7 @@ Supporting Documents:
         
 2. Back-end Integration
     
-    - The Orion Smart Table will integrate with the existing Orion back-end system, which is built on NetSuite
+    - The Provia Smart Table will integrate with the existing Provia back-end system, which is built on NetSuite
         
     - RESTful APIs will be used to facilitate communication between the front-end and back-end systems
         
@@ -354,7 +354,7 @@ Supporting Documents:
         
 3. Data Storage and Retrieval
     
-    - The table data will be stored in a JSON format within the Orion system
+    - The table data will be stored in a JSON format within the Provia system
         
     - Efficient data retrieval and caching mechanisms will be implemented to ensure optimal performance, even for large datasets
         
@@ -362,7 +362,7 @@ Supporting Documents:
         
 4. Responsive Design and Cross-Browser Compatibility
     
-    - The Orion Smart Table will be designed to be fully responsive and compatible with various screen sizes
+    - The Provia Smart Table will be designed to be fully responsive and compatible with various screen sizes
         
     - The module will be thoroughly tested across different browsers and versions to ensure consistent performance and functionality
         
@@ -370,7 +370,7 @@ Supporting Documents:
         
 5. Accessibility and Usability
     
-    - The Orion Smart Table will be developed with accessibility guidelines and best practices in mind
+    - The Provia Smart Table will be developed with accessibility guidelines and best practices in mind
         
     - Keyboard navigation, screen reader compatibility, and proper ARIA attributes will be implemented to ensure accessibility for users with disabilities
         

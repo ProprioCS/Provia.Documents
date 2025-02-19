@@ -11,7 +11,7 @@
 
 ## Overview
 
-The NetSuite Permissions System is designed to provide a flexible and scalable solution for managing user permissions within the Orion suite. This system leverages NetSuite's custom records and fields to store permission data, with a RESTlet endpoint providing seamless access to permission information for both frontend React applications and NetSuite implementations.
+The NetSuite Permissions System is designed to provide a flexible and scalable solution for managing user permissions within the Provia suite. This system leverages NetSuite's custom records and fields to store permission data, with a RESTlet endpoint providing seamless access to permission information for both frontend React applications and NetSuite implementations.
 
 The system enables granular control over feature access, including Smart Table functionality, Miller-Knoll quote tool integration, and order manager capabilities. By centralizing permission management and providing a consistent access mechanism, the system ensures secure and efficient permission handling across the platform.
 
@@ -70,7 +70,7 @@ The system enables granular control over feature access, including Smart Table f
 
 1. Custom Records
     
-    1. Orion Permissions
+    1. Provia Permissions
         
         1. Fields:
             
@@ -80,7 +80,7 @@ The system enables granular control over feature access, including Smart Table f
                 
 2. Role Custom Fields
     
-    1. Orion Permissions
+    1. Provia Permissions
         
 3. Permission Types
     
